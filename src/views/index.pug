@@ -5,8 +5,15 @@ html(lang="en")
     script(src='/assets/vendor.js')
     script(src='/assets/application.js')
   body
-    .jumbotron
-        h1.display-3 Hello, world!
-        p.lead
-            | This is a demo!
-        hr.my-4
+    table.table.table-striped
+      thead
+        tr
+          th Позиция
+          th Пользователь
+          th Рейтинг
+      tbody
+        for user in users
+          tr
+            td= user.rate
+            td= user.name
+            td= user.points

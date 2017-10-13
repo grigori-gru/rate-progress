@@ -3,17 +3,17 @@ import 'babel-polyfill';
 import bodyParser from 'koa-bodyparser';
 import middleware from 'koa-webpack';
 import Koa from 'koa';
-// import Rollbar from 'rollbar';
+import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import Router from 'koa-router';
 import Pug from 'koa-pug';
 import methodOverride from 'koa-methodoverride';
-// import flash from 'koa-flash-simple';
 import koaLogger from 'koa-logger';
 import _ from 'lodash';
 
 import getWebpackConfig from '../webpack.config.babel';
+import HTMLparser from './parser';
 
 dotenv.config();
 
@@ -53,18 +53,13 @@ export default () => {
 
   pug.use(app);
   router.get('root', '/', async (ctx) => {
-    await ctx.render('index');
+    const pathToHTML = path.resolve(__dirname, '..', '__tests__', '__fixtures__', 'test-rate.html');
+    const data = fs.readFileSync(pathToHTML, 'utf8').toString();
+    const users = HTMLparser(data);
+    await ctx.render('index', { users });
   });
-  // getRoutes(router, container);
 
   app.use(router.routes()).use(router.allowedMethods());
-  // const rollbarAccessToken = process.env.POST_SERVER_ITEM_ACCESS_TOKEN;
-
-  // const rollbar = new Rollbar(rollbarAccessToken);
-
-  // app.use(rollbar.errorHandler(rollbarAccessToken));
-
-  // rollbar.log('Hello world!');
 
   return app;
 };

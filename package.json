@@ -18,6 +18,11 @@
     "test": "jest",
     "testwatch": "jest --watch"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/__tests__/__fixtures__"
+    ]
+  },
   "author": "grigori-gru",
   "license": "ISC",
   "dependencies": {
@@ -40,6 +45,7 @@
     "jest": "*",
     "jquery": "*",
     "jquery-ujs": "*",
+    "jsdom": "^11.3.0",
     "koa": "*",
     "koa-bodyparser": "*",
     "koa-flash-simple": "*",
