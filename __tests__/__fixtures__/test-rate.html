@@ -1,1027 +1,1088 @@
 <!DOCTYPE html>
 <!-- saved from url=(0028)https://ru.hexlet.io/ratings -->
-<html prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" async="" src="./test-rate_files/saved_resource"></script><script src="./test-rate_files/1901967613399172" async=""></script><script async="" src="./test-rate_files/fbevents.js"></script><script type="text/javascript" async="" src="./test-rate_files/watch.js"></script><script type="text/javascript" async="" src="./test-rate_files/analytics.js"></script><script async="" src="./test-rate_files/gtm.js"></script><script async="" src="./test-rate_files/analytics.js"></script><script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":false,"payload":{"client":{"source_map_enabled":true,"code_version":null,"guess_uncaught_frames":true},"environment":"production","person":{"id":97715,"username":"Григорий Грудинин","email":"grgrvl14@gmail.com"}}};</script>
-<script type="text/javascript">!function(r){function o(n){if(e[n])return e[n].exports;var t=e[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,o),t.loaded=!0,t.exports}var e={};return o.m=r,o.c=e,o.p="",o(0)}([function(r,o,e){"use strict";var n=e(1),t=e(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.2.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,o,e){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,o){this.options=r,this._rollbarOldOnError=null;var e=s++;this.shimId=function(){return e},window&&window._rollbarShims&&(window._rollbarShims[e]={handler:o,messages:[]})}function a(r,o){var e=o.globalAlias||"Rollbar";if("object"==typeof r[e])return r[e];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(o);return n(function(){o.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),o.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=o.autoInstrument;return(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[e]=t,t})()}function l(r){return n(function(){var o=this,e=Array.prototype.slice.call(arguments,0),n={shim:o,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=e(2),s=0,d=e(3),c=function(r,o){return new t(r,o)},p=d.bind(null,c);t.prototype.loadFull=function(r,o,e,t,a){var l=function(){var o;if(void 0===r._rollbarDidLoad){o=new Error("rollbar.js did not load");for(var e,n,t,l,i=0;e=r._rollbarShims[i++];)for(e=e.messages||[];n=e.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(o);break}}"function"==typeof a&&a(o)},i=!1,s=o.createElement("script"),d=o.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,e||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,o,e){try{var n;if(n="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){e&&"function"==typeof e&&e.apply(this,arguments);try{return r.apply(this,arguments)}catch(e){var o=e;throw"string"==typeof o&&(o=new String(o)),o._rollbarContext=n()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o,o}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(o){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,o){"use strict";function e(r,o,e){if(r){var t;"function"==typeof o._rollbarOldOnError?t=o._rollbarOldOnError:r.onerror&&!r.onerror.belongsToShim&&(t=r.onerror,o._rollbarOldOnError=t);var a=function(){var e=Array.prototype.slice.call(arguments,0);n(r,o,t,e)};a.belongsToShim=e,r.onerror=a}}function n(r,o,e,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),o.handleUncaughtException.apply(o,n),e&&e.apply(r,n)}function t(r,o,e){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var e=r.reason,n=r.promise,t=r.detail;!e&&t&&(e=t.reason,n=t.promise),o&&o.handleUnhandledRejection&&o.handleUnhandledRejection(e,n)};n.belongsToShim=e,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,o,e){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(o,r[t].prototype,e)}}function l(r,o,e){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){for(var n=o.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(o,e,t){n.call(this,o,r.wrap(e),t)};t._rollbarOldAdd=n,t.belongsToShim=e,o.addEventListener=t;for(var a=o.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,o,e){a.call(this,r,o&&o._rollbar_wrapped||o,e)};l._rollbarOldRemove=a,l.belongsToShim=e,o.removeEventListener=l}}r.exports={captureUncaughtExceptions:e,captureUnhandledRejections:t,wrapGlobals:a}},function(r,o){"use strict";function e(r,o){this.impl=r(o,this),this.options=o,n(e.prototype)}function n(r){for(var o=function(r){return function(){var o=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,o)}},e="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureDomContentLoaded,captureLoad".split(","),n=0;n<e.length;n++)r[e[n]]=o(e[n])}e.prototype._swapAndProcessMessages=function(r,o){this.impl=r(this.options);for(var e,n,t;e=o.shift();)n=e.method,t=e.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],e.ts]):this[n].apply(this,t));return this},r.exports=e},function(r,o){"use strict";r.exports=function(r){return function(o){if(!o&&!window._rollbarInitialized){r=r||{};for(var e,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;e=window._rollbarShims[i++];)n||(n=e.handler),e.handler._swapAndProcessMessages(l,e.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
-</script>
-<link rel="stylesheet" media="all" href="./test-rate_files/application-c400c324d6320d261afff260be90ac82356e774715e28f734ad75e5aa0b3f687.css">
-<title>Рейтинг пользователей - Hexlet.io</title>
-<link rel="shortcut icon" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-196x196-422632c0ef41e9b13dd7ea89f1764e860d225ca3c20502b966a00c0039409a75.png" sizes="196x196">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-96x96-39f08613bbf8b826ce119c3b6bc232db10c863c168d57b180f78d18cadf843c6.png" sizes="96x96">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-32x32-2bae33d5d827199a252cd9309926586f01044782f3c83e3ffaf783bb318707a2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-16x16-cc9a0ab442a9dcba7e70fb733f58691955a2d1608fe439a5eed2afab400eb719.png" sizes="16x16">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-128-a9446dd4e081479874e0c59b63960612d181b05b10b2fbd544a7da7c5f6ead2a.png" sizes="128x128">
-<link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/android-icon-192x192-d4b29b393f0ec444bed29668e9b4b16aeb0a9c5312700e4f0819a96f72286cfc.png" sizes="192x192">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-57x57-f52e49208ae173f740c8f115217781975b78433b1fda469ec28ce70b92fc013e.png" sizes="57x57">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-114x114-c93f5c2681345acc94f672dc26dd79695eac733a3ac6f99ab3b0fbfa077d834e.png" sizes="114x114">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-72x72-27e1216e0a1b806d82b8ca649081eacf5b3f59b677b44c8e40eae30e83f90294.png" sizes="72x72">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-144x144-1f4fb8973826b06c9595101aac7f78fdb9bf26c3b769b759882ad319d58b17fd.png" sizes="144x144">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-60x60-08818618834c9c99de70284d4bfb0cdfc926b03c88c732ba92fd9ba9e5ac900f.png" sizes="60x60">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-120x120-3da36d0e1da4c8d1a6df85aec54c2b84946e96865005ffb4a10e99223bba2d61.png" sizes="120x120">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-76x76-6a66b2c592947eb379280523cb009884f61f620be8375ebdee3ed7d23743314a.png" sizes="76x76">
-<link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-152x152-93cc5e1542f2ca0d20c1f7fca7b5ac37be57f70e42d23877668d616383497540.png" sizes="152x152">
-<meta content=" " name="application-name">
-<meta content="#FFFFFF" name="msapplication-TileColor">
-<meta content="/assets/icons/default/mstile-144x144-1f4fb8973826b06c9595101aac7f78fdb9bf26c3b769b759882ad319d58b17fd.png" name="msapplication-TileImage">
-<meta content="/assets/icons/default/mstile-70x70-a9446dd4e081479874e0c59b63960612d181b05b10b2fbd544a7da7c5f6ead2a.png" name="msapplication-square70x70logo">
-<meta content="/assets/icons/default/mstile-150x150-58610d84ec0afe2803c6e07649701c712e3257ab5fc06c6cd338557201b2571a.png" name="msapplication-square150x150logo">
-<meta content="/assets/icons/default/mstile-310x150-74279c38ca713e2d5526d2fc170c0c7951b85b83852fc22a59b216c73843a5ce.png" name="msapplication-wide310x150logo">
-<meta content="/assets/icons/default/mstile-310x310-dfe850e714b2b802fb7455a582bf8d34dcbd73c6e8d100a54d4c36007079f4e2.png" name="msapplication-square310x310logo">
+<html prefix="og: http://ogp.me/ns#">
 
-<meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="OXxRsyrbII+gGM3fVgM77r3LJMNQ7P8N/qI8rjCv5he0Thx/LpJzHtlHxDSfDrvdjuDUMuUXEoL8+H5Ub0Jy8g==">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<script>
-//<![CDATA[
-window.gon={};gon.applications={};gon.current_user={"id":97715,"email":"grgrvl14@gmail.com","username":"g_grigori","created_at":"2016-03-18T09:37:17.116Z","text":"grgrvl14@gmail.com (g_grigori)","last_viewed_notification_id":234407,"full_name":"Григорий Грудинин","public_name":"Григорий Грудинин","admin":false,"url":"/u/g_grigori","can_use_paid_features":true,"preferences_filled":true,"isGuest":false,"isAdmin":false,"can_send_emails":true};gon.token="DDGhfpRxVG5ohMvwK1PZfyOcSVL9wWijHRrdbSLEdoKBA+yykDgH\/xHbwhviXllMELe5o0g6hSwfQJ+XfSniZw==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.subdomains=["en.hexlet.io","ru.hexlet.io"];gon.images={"secure_payment":"\/assets\/secure_payment-848372702516f5d8f8affd4af87f78e890742c7bf3118428359b17223b847057.png"};gon.notifications=[{"id":234407,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;около 21 часа назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eСобытия\u003c/b\u003e","is_removed":false,"url":"/code_reviews/25274"},{"id":234359,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;около 24 часов назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eJQuery\u003c/b\u003e","is_removed":false,"url":"/code_reviews/25252"},{"id":233786,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;2 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eОбъекты первого класса\u003c/b\u003e","is_removed":false,"url":"/code_reviews/25095"},{"id":233574,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;3 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eChildren\u003c/b\u003e","is_removed":false,"url":"/code_reviews/25034"},{"id":233531,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;3 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eОбработка имен классов\u003c/b\u003e","is_removed":false,"url":"/code_reviews/25023"},{"id":232851,"message":"\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;6 дней назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eРазличия jsx и html\u003c/b\u003e","is_removed":false,"url":"/code_reviews/24767"}];gon.occupations=[["\u0425\u043e\u0447\u0443 \u0441\u0442\u0430\u0442\u044c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u043e\u043c","become_developer"],["\u042f \u0443\u0436\u0435 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442","developer"],["\u0414\u0440\u0443\u0433\u043e\u0435","other"]];gon.stacks=[{"id":7,"slug":"python","created_at":"2016-02-25T10:58:55.589Z","updated_at":"2016-02-25T11:08:12.940Z","locale":"ru","title":"Python-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":8,"slug":"android","created_at":"2016-02-25T11:08:40.584Z","updated_at":"2016-02-25T11:08:40.584Z","locale":"ru","title":"Android-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":9,"slug":"ruby","created_at":"2016-02-25T11:09:14.622Z","updated_at":"2016-02-25T11:09:14.622Z","locale":"ru","title":"Ruby-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":10,"slug":"ios","created_at":"2016-02-25T11:09:30.483Z","updated_at":"2016-02-25T11:09:30.483Z","locale":"ru","title":"IOS-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":11,"slug":"dotnet","created_at":"2016-02-25T11:10:05.993Z","updated_at":"2016-02-25T11:10:10.703Z","locale":"ru","title":".NET-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":4,"slug":"javascript","created_at":"2016-02-16T06:26:20.720Z","updated_at":"2016-02-25T11:11:02.978Z","locale":"ru","title":"Javascript-программист","image_id":null,"subtitle":"","description":"","state":"unpublished","skills":"","color":"","stack_state":"not_finished","order":null},{"id":12,"slug":"frontend","created_at":"2016-02-25T11:11:22.404Z","updated_at":"2017-08-30T11:46:02.541Z","locale":"ru","title":"Фронтенд JS-программист","image_id":"b942db68ee2c2f1fbce31d74b1d2779ea739ff8da26653f10201cbf531c0","subtitle":"Разработка фронтэнд-компонентов веб-приложений.","description":"Веб-разработку фундаментально можно разделить на бэкэнд и фронтэнд. Фронтэнд-разработчики занимаются созданием и поддержкой «лицевой» части веб-приложений, всего, с чем взаимодействует конечный пользователь: веб-страницы, интерфейсы и управляющие элементы. ","state":"published","skills":"Фундаментальное понимание программирования\r\nРабота с командной строкой\r\nУмение работать с инструментами разработки\r\nПонимание самых свежих стандартов ES\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить фронтенд-части веб-приложений\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)","color":"#E5C736","stack_state":"not_finished","order":2},{"id":2,"slug":"php","created_at":"2016-02-04T19:42:27.662Z","updated_at":"2017-08-30T11:48:59.735Z","locale":"ru","title":"PHP-программист","image_id":"ed707ac6915a99ee63c8efbb2c9677b0256c30425e206a1f62f625517811","subtitle":"Разработка веб-приложений и сервисов.","description":"В области веб-программирования PHP — самый популярный язык. На нем написаны миллионы сайтов, по нему больше всего предложений о работе. Профессия PHP-разработчика требует от программиста не только знания синтаксиса языка, но и навыков работы с базами данных, понимания архитектуры компьютера, операционных систем и систем деплоя.","state":"published","skills":"Фундаментальное понимание программирования\r\nРабота с Linux и командной строкой\r\nЗнание SQL\r\nРабота с базами данных\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить веб-приложения на основе микрофреймворков\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)","color":"#6c7eb7","stack_state":"finished","order":3},{"id":3,"slug":"java","created_at":"2016-02-16T06:25:42.934Z","updated_at":"2017-08-30T11:49:11.094Z","locale":"ru","title":"Java-программист","image_id":"a9151e60f37aeb97ea12714ac27eba03feee9251877b86ce2b6f5e20e006","subtitle":"Разработка приложений на языке Java.","description":"Java — это популярнейший строго типизированный объектно-ориентированный язык программирования с интересной особенностью: программы транслируются в специальный байт-код, поэтому они могут работать на любой компьютерной архитектуре с помощью виртуальной Java-машины.","state":"published","skills":"Фундаментальное понимание программирования\r\nРабота с командной строкой\r\nУмение работать с инструментами разработки\r\nУмение работать со встроенными структурами данных\r\nНавыки создания собственных структур данных\r\nУмение работать напрямую с байт-кодом Java\r\nОбъектно-ориентированное программирование\r\nПонимание обобщенных данных в Java\r\nАлгоритмическое мышление\r\nПонимание протокола HTTP\r\nРабота с базами данных","color":"#d89797","stack_state":"not_finished","order":4},{"id":13,"slug":"backend","created_at":"2016-05-13T09:54:03.091Z","updated_at":"2017-08-30T11:45:45.651Z","locale":"ru","title":"Бэкенд JS-программист (node.js)","image_id":"917bf394ec7db64af746bfa598d796b592bf3fd91d41576d8f34ec3ab6e7","subtitle":"Разработка бэкенд-компонентов веб-приложений.","description":"Веб-разработку фундаментально можно разделить на бэкенд и фронтенд. Бэкенд-разработчики занимаются созданием и поддержкой серверной части веб-приложений, которая находится «под капотом» и взаимодействует с клиентской частью. В эту сферу входит работа с базами данных.","state":"published","skills":"Фундаментальное понимание программирования\r\nРазработка в среде Node.js\r\nРабота с Linux и командной строкой\r\nУмение работать с инструментами разработки\r\nЗнание SQL\r\nРабота с базами данных\r\nПонимание самых свежих стандартов ES\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить бэкенд-части веб-приложений\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)","color":"#3C9287","stack_state":"finished","order":1},{"id":null,"title":"\u0414\u0440\u0443\u0433\u043e\u0435"}];
-//]]>
-</script>
-<script>
-  // in development mode
-  if (!window.Rollbar) {
-    Rollbar = {
-      error: function() {
-      },
-      configure: function() {
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" async="" src="./test-rate_files/saved_resource"></script>
+  <script src="./test-rate_files/1901967613399172" async=""></script>
+  <script async="" src="./test-rate_files/fbevents.js"></script>
+  <script type="text/javascript" async="" src="./test-rate_files/watch.js"></script>
+  <script type="text/javascript" async="" src="./test-rate_files/analytics.js"></script>
+  <script async="" src="./test-rate_files/gtm.js"></script>
+  <script async="" src="./test-rate_files/analytics.js"></script>
+  <script type="text/javascript">
+    var _rollbarConfig = {
+      "accessToken": "fc27636027d0460bbc1578d97d0d27ad",
+      "captureUncaught": false,
+      "payload": {
+        "client": {
+          "source_map_enabled": true,
+          "code_version": null,
+          "guess_uncaught_frames": true
+        },
+        "environment": "production",
+        "person": {
+          "id": 97715,
+          "username": "Григорий Грудинин",
+          "email": "grgrvl14@gmail.com"
+        }
+      }
+    };
+  </script>
+  <script type="text/javascript">
+    ! function (r) {
+      function o(n) {
+        if (e[n]) return e[n].exports;
+        var t = e[n] = {
+          exports: {},
+          id: n,
+          loaded: !1
+        };
+        return r[n].call(t.exports, t, t.exports, o), t.loaded = !0, t.exports
+      }
+      var e = {};
+      return o.m = r, o.c = e, o.p = "", o(0)
+    }([function (r, o, e) {
+      "use strict";
+      var n = e(1),
+        t = e(4);
+      _rollbarConfig = _rollbarConfig || {}, _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl ||
+        "https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.2.3/rollbar.min.js", _rollbarConfig.async = void 0 ===
+        _rollbarConfig.async || _rollbarConfig.async;
+      var a = n.setupShim(window, _rollbarConfig),
+        l = t(_rollbarConfig);
+      window.rollbar = n.Rollbar, a.loadFull(window, document, !_rollbarConfig.async, _rollbarConfig, l)
+    }, function (r, o, e) {
+      "use strict";
+
+      function n(r) {
+        return function () {
+          try {
+            return r.apply(this, arguments)
+          } catch (r) {
+            try {
+              console.error("[Rollbar]: Internal error", r)
+            } catch (r) {}
+          }
+        }
+      }
+
+      function t(r, o) {
+        this.options = r, this._rollbarOldOnError = null;
+        var e = s++;
+        this.shimId = function () {
+          return e
+        }, window && window._rollbarShims && (window._rollbarShims[e] = {
+          handler: o,
+          messages: []
+        })
+      }
+
+      function a(r, o) {
+        var e = o.globalAlias || "Rollbar";
+        if ("object" == typeof r[e]) return r[e];
+        r._rollbarShims = {}, r._rollbarWrappedError = null;
+        var t = new p(o);
+        return n(function () {
+          o.captureUncaught && (t._rollbarOldOnError = r.onerror, i.captureUncaughtExceptions(r, t, !0), i.wrapGlobals(
+            r, t, !0)), o.captureUnhandledRejections && i.captureUnhandledRejections(r, t, !0);
+          var n = o.autoInstrument;
+          return (void 0 === n || n === !0 || "object" == typeof n && n.network) && r.addEventListener && (r.addEventListener(
+            "load", t.captureLoad.bind(t)), r.addEventListener("DOMContentLoaded", t.captureDomContentLoaded
+            .bind(t))), r[e] = t, t
+        })()
+      }
+
+      function l(r) {
+        return n(function () {
+          var o = this,
+            e = Array.prototype.slice.call(arguments, 0),
+            n = {
+              shim: o,
+              method: r,
+              args: e,
+              ts: new Date
+            };
+          window._rollbarShims[this.shimId()].messages.push(n)
+        })
+      }
+      var i = e(2),
+        s = 0,
+        d = e(3),
+        c = function (r, o) {
+          return new t(r, o)
+        },
+        p = d.bind(null, c);
+      t.prototype.loadFull = function (r, o, e, t, a) {
+        var l = function () {
+            var o;
+            if (void 0 === r._rollbarDidLoad) {
+              o = new Error("rollbar.js did not load");
+              for (var e, n, t, l, i = 0; e = r._rollbarShims[i++];)
+                for (e = e.messages || []; n = e.shift();)
+                  for (t = n.args || [], i = 0; i < t.length; ++i)
+                    if (l = t[i], "function" == typeof l) {
+                      l(o);
+                      break
+                    }
+            }
+            "function" == typeof a && a(o)
+          },
+          i = !1,
+          s = o.createElement("script"),
+          d = o.getElementsByTagName("script")[0],
+          c = d.parentNode;
+        s.crossOrigin = "", s.src = t.rollbarJsUrl, e || (s.async = !0), s.onload = s.onreadystatechange = n(
+          function () {
+            if (!(i || this.readyState && "loaded" !== this.readyState && "complete" !== this.readyState)) {
+              s.onload = s.onreadystatechange = null;
+              try {
+                c.removeChild(s)
+              } catch (r) {}
+              i = !0, l()
+            }
+          }), c.insertBefore(s, d)
+      }, t.prototype.wrap = function (r, o, e) {
+        try {
+          var n;
+          if (n = "function" == typeof o ? o : function () {
+              return o || {}
+            }, "function" != typeof r) return r;
+          if (r._isWrap) return r;
+          if (!r._rollbar_wrapped && (r._rollbar_wrapped = function () {
+              e && "function" == typeof e && e.apply(this, arguments);
+              try {
+                return r.apply(this, arguments)
+              } catch (e) {
+                var o = e;
+                throw "string" == typeof o && (o = new String(o)), o._rollbarContext = n() || {}, o._rollbarContext
+                  ._wrappedSource = r.toString(), window._rollbarWrappedError = o, o
+              }
+            }, r._rollbar_wrapped._isWrap = !0, r.hasOwnProperty))
+            for (var t in r) r.hasOwnProperty(t) && (r._rollbar_wrapped[t] = r[t]);
+          return r._rollbar_wrapped
+        } catch (o) {
+          return r
+        }
+      };
+      for (var u =
+          "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureDomContentLoaded,captureLoad"
+          .split(","), f = 0; f < u.length; ++f) t.prototype[u[f]] = l(u[f]);
+      r.exports = {
+        setupShim: a,
+        Rollbar: p
+      }
+    }, function (r, o) {
+      "use strict";
+
+      function e(r, o, e) {
+        if (r) {
+          var t;
+          "function" == typeof o._rollbarOldOnError ? t = o._rollbarOldOnError : r.onerror && !r.onerror.belongsToShim &&
+            (t = r.onerror, o._rollbarOldOnError = t);
+          var a = function () {
+            var e = Array.prototype.slice.call(arguments, 0);
+            n(r, o, t, e)
+          };
+          a.belongsToShim = e, r.onerror = a
+        }
+      }
+
+      function n(r, o, e, n) {
+        r._rollbarWrappedError && (n[4] || (n[4] = r._rollbarWrappedError), n[5] || (n[5] = r._rollbarWrappedError._rollbarContext),
+          r._rollbarWrappedError = null), o.handleUncaughtException.apply(o, n), e && e.apply(r, n)
+      }
+
+      function t(r, o, e) {
+        if (r) {
+          "function" == typeof r._rollbarURH && r._rollbarURH.belongsToShim && r.removeEventListener(
+            "unhandledrejection", r._rollbarURH);
+          var n = function (r) {
+            var e = r.reason,
+              n = r.promise,
+              t = r.detail;
+            !e && t && (e = t.reason, n = t.promise), o && o.handleUnhandledRejection && o.handleUnhandledRejection(
+              e, n)
+          };
+          n.belongsToShim = e, r._rollbarURH = n, r.addEventListener("unhandledrejection", n)
+        }
+      }
+
+      function a(r, o, e) {
+        if (r) {
+          var n, t, a =
+            "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload"
+            .split(",");
+          for (n = 0; n < a.length; ++n) t = a[n], r[t] && r[t].prototype && l(o, r[t].prototype, e)
+        }
+      }
+
+      function l(r, o, e) {
+        if (o.hasOwnProperty && o.hasOwnProperty("addEventListener")) {
+          for (var n = o.addEventListener; n._rollbarOldAdd && n.belongsToShim;) n = n._rollbarOldAdd;
+          var t = function (o, e, t) {
+            n.call(this, o, r.wrap(e), t)
+          };
+          t._rollbarOldAdd = n, t.belongsToShim = e, o.addEventListener = t;
+          for (var a = o.removeEventListener; a._rollbarOldRemove && a.belongsToShim;) a = a._rollbarOldRemove;
+          var l = function (r, o, e) {
+            a.call(this, r, o && o._rollbar_wrapped || o, e)
+          };
+          l._rollbarOldRemove = a, l.belongsToShim = e, o.removeEventListener = l
+        }
+      }
+      r.exports = {
+        captureUncaughtExceptions: e,
+        captureUnhandledRejections: t,
+        wrapGlobals: a
+      }
+    }, function (r, o) {
+      "use strict";
+
+      function e(r, o) {
+        this.impl = r(o, this), this.options = o, n(e.prototype)
+      }
+
+      function n(r) {
+        for (var o = function (r) {
+              return function () {
+                var o = Array.prototype.slice.call(arguments, 0);
+                if (this.impl[r]) return this.impl[r].apply(this.impl, o)
+              }
+            }, e =
+            "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureDomContentLoaded,captureLoad"
+            .split(","), n = 0; n < e.length; n++) r[e[n]] = o(e[n])
+      }
+      e.prototype._swapAndProcessMessages = function (r, o) {
+        this.impl = r(this.options);
+        for (var e, n, t; e = o.shift();) n = e.method, t = e.args, this[n] && "function" == typeof this[n] && (
+          "captureDomContentLoaded" === n || "captureLoad" === n ? this[n].apply(this, [t[0], e.ts]) : this[n].apply(
+            this, t));
+        return this
+      }, r.exports = e
+    }, function (r, o) {
+      "use strict";
+      r.exports = function (r) {
+        return function (o) {
+          if (!o && !window._rollbarInitialized) {
+            r = r || {};
+            for (var e, n, t = r.globalAlias || "Rollbar", a = window.rollbar, l = function (r) {
+                return new a(r)
+              }, i = 0; e = window._rollbarShims[i++];) n || (n = e.handler), e.handler._swapAndProcessMessages(
+              l, e.messages);
+            window[t] = n, window._rollbarInitialized = !0
+          }
+        }
+      }
+    }]);
+  </script>
+  <link rel="stylesheet" media="all" href="./test-rate_files/application-c400c324d6320d261afff260be90ac82356e774715e28f734ad75e5aa0b3f687.css">
+  <title>Рейтинг пользователей - Hexlet.io</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-196x196-422632c0ef41e9b13dd7ea89f1764e860d225ca3c20502b966a00c0039409a75.png"
+    sizes="196x196">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-96x96-39f08613bbf8b826ce119c3b6bc232db10c863c168d57b180f78d18cadf843c6.png"
+    sizes="96x96">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-32x32-2bae33d5d827199a252cd9309926586f01044782f3c83e3ffaf783bb318707a2.png"
+    sizes="32x32">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-16x16-cc9a0ab442a9dcba7e70fb733f58691955a2d1608fe439a5eed2afab400eb719.png"
+    sizes="16x16">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/favicon-128-a9446dd4e081479874e0c59b63960612d181b05b10b2fbd544a7da7c5f6ead2a.png"
+    sizes="128x128">
+  <link rel="shortcut icon" type="image/png" href="https://ru.hexlet.io/assets/icons/default/android-icon-192x192-d4b29b393f0ec444bed29668e9b4b16aeb0a9c5312700e4f0819a96f72286cfc.png"
+    sizes="192x192">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-57x57-f52e49208ae173f740c8f115217781975b78433b1fda469ec28ce70b92fc013e.png"
+    sizes="57x57">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-114x114-c93f5c2681345acc94f672dc26dd79695eac733a3ac6f99ab3b0fbfa077d834e.png"
+    sizes="114x114">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-72x72-27e1216e0a1b806d82b8ca649081eacf5b3f59b677b44c8e40eae30e83f90294.png"
+    sizes="72x72">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-144x144-1f4fb8973826b06c9595101aac7f78fdb9bf26c3b769b759882ad319d58b17fd.png"
+    sizes="144x144">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-60x60-08818618834c9c99de70284d4bfb0cdfc926b03c88c732ba92fd9ba9e5ac900f.png"
+    sizes="60x60">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-120x120-3da36d0e1da4c8d1a6df85aec54c2b84946e96865005ffb4a10e99223bba2d61.png"
+    sizes="120x120">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-76x76-6a66b2c592947eb379280523cb009884f61f620be8375ebdee3ed7d23743314a.png"
+    sizes="76x76">
+  <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="https://ru.hexlet.io/assets/icons/default/apple-touch-icon-152x152-93cc5e1542f2ca0d20c1f7fca7b5ac37be57f70e42d23877668d616383497540.png"
+    sizes="152x152">
+  <meta content=" " name="application-name">
+  <meta content="#FFFFFF" name="msapplication-TileColor">
+  <meta content="/assets/icons/default/mstile-144x144-1f4fb8973826b06c9595101aac7f78fdb9bf26c3b769b759882ad319d58b17fd.png"
+    name="msapplication-TileImage">
+  <meta content="/assets/icons/default/mstile-70x70-a9446dd4e081479874e0c59b63960612d181b05b10b2fbd544a7da7c5f6ead2a.png" name="msapplication-square70x70logo">
+  <meta content="/assets/icons/default/mstile-150x150-58610d84ec0afe2803c6e07649701c712e3257ab5fc06c6cd338557201b2571a.png"
+    name="msapplication-square150x150logo">
+  <meta content="/assets/icons/default/mstile-310x150-74279c38ca713e2d5526d2fc170c0c7951b85b83852fc22a59b216c73843a5ce.png"
+    name="msapplication-wide310x150logo">
+  <meta content="/assets/icons/default/mstile-310x310-dfe850e714b2b802fb7455a582bf8d34dcbd73c6e8d100a54d4c36007079f4e2.png"
+    name="msapplication-square310x310logo">
+
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="OXxRsyrbII+gGM3fVgM77r3LJMNQ7P8N/qI8rjCv5he0Thx/LpJzHtlHxDSfDrvdjuDUMuUXEoL8+H5Ub0Jy8g==">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script>
+    //<![CDATA[
+    window.gon = {};
+    gon.applications = {};
+    gon.current_user = {
+      "id": 97715,
+      "email": "grgrvl14@gmail.com",
+      "username": "g_grigori",
+      "created_at": "2016-03-18T09:37:17.116Z",
+      "text": "grgrvl14@gmail.com (g_grigori)",
+      "last_viewed_notification_id": 234407,
+      "full_name": "Григорий Грудинин",
+      "public_name": "Григорий Грудинин",
+      "admin": false,
+      "url": "/u/g_grigori",
+      "can_use_paid_features": true,
+      "preferences_filled": true,
+      "isGuest": false,
+      "isAdmin": false,
+      "can_send_emails": true
+    };
+    gon.token = "DDGhfpRxVG5ohMvwK1PZfyOcSVL9wWijHRrdbSLEdoKBA+yykDgH\/xHbwhviXllMELe5o0g6hSwfQJ+XfSniZw==";
+    gon.disqus_name = "hexletio";
+    gon.locale = "ru";
+    gon.rails_env = "production";
+    gon.analytics_events = "AnalyticsEvents";
+    gon.subdomains = ["en.hexlet.io", "ru.hexlet.io"];
+    gon.images = {
+      "secure_payment": "\/assets\/secure_payment-848372702516f5d8f8affd4af87f78e890742c7bf3118428359b17223b847057.png"
+    };
+    gon.notifications = [{
+      "id": 234407,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;около 21 часа назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eСобытия\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/25274"
+    }, {
+      "id": 234359,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;около 24 часов назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eJQuery\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/25252"
+    }, {
+      "id": 233786,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;2 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eОбъекты первого класса\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/25095"
+    }, {
+      "id": 233574,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;3 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eChildren\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/25034"
+    }, {
+      "id": 233531,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;3 дня назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eОбработка имен классов\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/25023"
+    }, {
+      "id": 232851,
+      "message": "\u003cspan class=\"fa fa-bicycle\"\u003e\u003c/span\u003e\u0026nbsp;6 дней назад:\u0026nbsp;Код принят на ревью для \u003cb\u003eРазличия jsx и html\u003c/b\u003e",
+      "is_removed": false,
+      "url": "/code_reviews/24767"
+    }];
+    gon.occupations = [
+      [
+        "\u0425\u043e\u0447\u0443 \u0441\u0442\u0430\u0442\u044c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u043e\u043c",
+        "become_developer"
+      ],
+      ["\u042f \u0443\u0436\u0435 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442", "developer"],
+      ["\u0414\u0440\u0443\u0433\u043e\u0435", "other"]
+    ];
+    gon.stacks = [{
+      "id": 7,
+      "slug": "python",
+      "created_at": "2016-02-25T10:58:55.589Z",
+      "updated_at": "2016-02-25T11:08:12.940Z",
+      "locale": "ru",
+      "title": "Python-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 8,
+      "slug": "android",
+      "created_at": "2016-02-25T11:08:40.584Z",
+      "updated_at": "2016-02-25T11:08:40.584Z",
+      "locale": "ru",
+      "title": "Android-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 9,
+      "slug": "ruby",
+      "created_at": "2016-02-25T11:09:14.622Z",
+      "updated_at": "2016-02-25T11:09:14.622Z",
+      "locale": "ru",
+      "title": "Ruby-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 10,
+      "slug": "ios",
+      "created_at": "2016-02-25T11:09:30.483Z",
+      "updated_at": "2016-02-25T11:09:30.483Z",
+      "locale": "ru",
+      "title": "IOS-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 11,
+      "slug": "dotnet",
+      "created_at": "2016-02-25T11:10:05.993Z",
+      "updated_at": "2016-02-25T11:10:10.703Z",
+      "locale": "ru",
+      "title": ".NET-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 4,
+      "slug": "javascript",
+      "created_at": "2016-02-16T06:26:20.720Z",
+      "updated_at": "2016-02-25T11:11:02.978Z",
+      "locale": "ru",
+      "title": "Javascript-программист",
+      "image_id": null,
+      "subtitle": "",
+      "description": "",
+      "state": "unpublished",
+      "skills": "",
+      "color": "",
+      "stack_state": "not_finished",
+      "order": null
+    }, {
+      "id": 12,
+      "slug": "frontend",
+      "created_at": "2016-02-25T11:11:22.404Z",
+      "updated_at": "2017-08-30T11:46:02.541Z",
+      "locale": "ru",
+      "title": "Фронтенд JS-программист",
+      "image_id": "b942db68ee2c2f1fbce31d74b1d2779ea739ff8da26653f10201cbf531c0",
+      "subtitle": "Разработка фронтэнд-компонентов веб-приложений.",
+      "description": "Веб-разработку фундаментально можно разделить на бэкэнд и фронтэнд. Фронтэнд-разработчики занимаются созданием и поддержкой «лицевой» части веб-приложений, всего, с чем взаимодействует конечный пользователь: веб-страницы, интерфейсы и управляющие элементы. ",
+      "state": "published",
+      "skills": "Фундаментальное понимание программирования\r\nРабота с командной строкой\r\nУмение работать с инструментами разработки\r\nПонимание самых свежих стандартов ES\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить фронтенд-части веб-приложений\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)",
+      "color": "#E5C736",
+      "stack_state": "not_finished",
+      "order": 2
+    }, {
+      "id": 2,
+      "slug": "php",
+      "created_at": "2016-02-04T19:42:27.662Z",
+      "updated_at": "2017-08-30T11:48:59.735Z",
+      "locale": "ru",
+      "title": "PHP-программист",
+      "image_id": "ed707ac6915a99ee63c8efbb2c9677b0256c30425e206a1f62f625517811",
+      "subtitle": "Разработка веб-приложений и сервисов.",
+      "description": "В области веб-программирования PHP — самый популярный язык. На нем написаны миллионы сайтов, по нему больше всего предложений о работе. Профессия PHP-разработчика требует от программиста не только знания синтаксиса языка, но и навыков работы с базами данных, понимания архитектуры компьютера, операционных систем и систем деплоя.",
+      "state": "published",
+      "skills": "Фундаментальное понимание программирования\r\nРабота с Linux и командной строкой\r\nЗнание SQL\r\nРабота с базами данных\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить веб-приложения на основе микрофреймворков\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)",
+      "color": "#6c7eb7",
+      "stack_state": "finished",
+      "order": 3
+    }, {
+      "id": 3,
+      "slug": "java",
+      "created_at": "2016-02-16T06:25:42.934Z",
+      "updated_at": "2017-08-30T11:49:11.094Z",
+      "locale": "ru",
+      "title": "Java-программист",
+      "image_id": "a9151e60f37aeb97ea12714ac27eba03feee9251877b86ce2b6f5e20e006",
+      "subtitle": "Разработка приложений на языке Java.",
+      "description": "Java — это популярнейший строго типизированный объектно-ориентированный язык программирования с интересной особенностью: программы транслируются в специальный байт-код, поэтому они могут работать на любой компьютерной архитектуре с помощью виртуальной Java-машины.",
+      "state": "published",
+      "skills": "Фундаментальное понимание программирования\r\nРабота с командной строкой\r\nУмение работать с инструментами разработки\r\nУмение работать со встроенными структурами данных\r\nНавыки создания собственных структур данных\r\nУмение работать напрямую с байт-кодом Java\r\nОбъектно-ориентированное программирование\r\nПонимание обобщенных данных в Java\r\nАлгоритмическое мышление\r\nПонимание протокола HTTP\r\nРабота с базами данных",
+      "color": "#d89797",
+      "stack_state": "not_finished",
+      "order": 4
+    }, {
+      "id": 13,
+      "slug": "backend",
+      "created_at": "2016-05-13T09:54:03.091Z",
+      "updated_at": "2017-08-30T11:45:45.651Z",
+      "locale": "ru",
+      "title": "Бэкенд JS-программист (node.js)",
+      "image_id": "917bf394ec7db64af746bfa598d796b592bf3fd91d41576d8f34ec3ab6e7",
+      "subtitle": "Разработка бэкенд-компонентов веб-приложений.",
+      "description": "Веб-разработку фундаментально можно разделить на бэкенд и фронтенд. Бэкенд-разработчики занимаются созданием и поддержкой серверной части веб-приложений, которая находится «под капотом» и взаимодействует с клиентской частью. В эту сферу входит работа с базами данных.",
+      "state": "published",
+      "skills": "Фундаментальное понимание программирования\r\nРазработка в среде Node.js\r\nРабота с Linux и командной строкой\r\nУмение работать с инструментами разработки\r\nЗнание SQL\r\nРабота с базами данных\r\nПонимание самых свежих стандартов ES\r\nНаписание автоматических тестов\r\nАлгоритмическое мышление\r\nОбъектно-ориентированное программирование\r\nАвтоматическое тестирование\r\nУмение строить бэкенд-части веб-приложений\r\nРазработка веб-сайтов и приложений\r\nПонимание протокола HTTP\r\nЗнание инструментов Configuration Management\r\nАдминистрирование Linux (базовое)",
+      "color": "#3C9287",
+      "stack_state": "finished",
+      "order": 1
+    }, {
+      "id": null,
+      "title": "\u0414\u0440\u0443\u0433\u043e\u0435"
+    }];
+    //]]>
+  </script>
+  <script>
+    // in development mode
+    if (!window.Rollbar) {
+      Rollbar = {
+        error: function () {},
+        configure: function () {}
       }
     }
-  }
-  
-  Rollbar.configure({
-    payload: {
-      person: gon.current_user
+
+    Rollbar.configure({
+      payload: {
+        person: gon.current_user
+      }
+    });
+  </script>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    if (gon.current_user.guest) {
+      ga('create', 'UA-1360700-51', 'auto');
+    } else {
+      ga('create', 'UA-1360700-51', 'auto', {
+        'userId': gon.current_user.id
+      });
     }
-  });
-</script>
+    ga('send', 'pageview');
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
-  if (gon.current_user.guest) {
-    ga('create', 'UA-1360700-51', 'auto');
-  } else {
-    ga('create', 'UA-1360700-51', 'auto',  { 'userId': gon.current_user.id });
-  }
-  ga('send', 'pageview');
-  
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WK88TH');</script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WK88TH');
+  </script>
 
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss">
-<meta content="website" property="og:type">
-<meta content="Рейтинг пользователей - Hexlet.io" property="og:title">
-<meta content="https://ru.hexlet.io/ratings" property="og:url">
-<meta content="Топ пользователей Хекслета." name="description">
-<meta content="Топ пользователей Хекслета." property="og:description">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss">
+  <meta content="website" property="og:type">
+  <meta content="Рейтинг пользователей - Hexlet.io" property="og:title">
+  <meta content="https://ru.hexlet.io/ratings" property="og:url">
+  <meta content="Топ пользователей Хекслета." name="description">
+  <meta content="Топ пользователей Хекслета." property="og:description">
 
 </head>
+
 <body>
-<noscript>
-&lt;iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-WK88TH' style='display:none;visibility:hidden' width='0'&gt;&lt;/iframe&gt;
-</noscript>
+  <noscript>
+    &lt;iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-WK88TH' style='display:none;visibility:hidden'
+    width='0'&gt;&lt;/iframe&gt;
+  </noscript>
 
-<nav class="navbar navbar-expand-lg navbar-light hexlet-navbar">
-<button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="navbar-collapse collapse" id="navbarResponsive">
-<a aria-hidden="true" class="navbar-brand mr-4" href="https://ru.hexlet.io/">
-Hexlet
-</a>
-<ul class="navbar-nav mr-auto">
-<li class="nav-item"><a class="nav-link  " href="https://ru.hexlet.io/my"><span class="fa fa-map-marker hexlet-header-icon"></span>
-Мой Хекслет
-</a></li><li class="nav-item"><a class="nav-link  " href="https://ru.hexlet.io/professions"><span class="fa fa-university hexlet-header-icon"></span>
-Обучение
-</a></li><li class="nav-item">
-<a class="nav-link" href="https://ru.hexlet.io/projects"><span class="fa fa-code-fork hexlet-header-icon"></span>
-Проекты
-</a></li>
-<li class="nav-item">
-<a class="nav-link" href="https://ru.hexlet.io/mentors"><span class="fa fa-users hexlet-header-icon"></span>
-Менторы
-</a></li>
-<li class="nav-item">
-<a target="_blank" class="nav-link" href="https://hexletguides.github.io/"><span class="fa fa-book hexlet-header-icon"></span>
-Hexlet Guides
-</a></li>
-</ul>
-<ul class="navbar-nav" id="notifications"><li data-reactroot="" class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://ru.hexlet.io/ratings#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-bell-o"></span></a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25274"><span class="fa fa-bicycle"></span>&nbsp;около 21 часа назад:&nbsp;Код принят на ревью для <b>События</b></a><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25252"><span class="fa fa-bicycle"></span>&nbsp;около 24 часов назад:&nbsp;Код принят на ревью для <b>JQuery</b></a><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25095"><span class="fa fa-bicycle"></span>&nbsp;2 дня назад:&nbsp;Код принят на ревью для <b>Объекты первого класса</b></a><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25034"><span class="fa fa-bicycle"></span>&nbsp;3 дня назад:&nbsp;Код принят на ревью для <b>Children</b></a><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25023"><span class="fa fa-bicycle"></span>&nbsp;3 дня назад:&nbsp;Код принят на ревью для <b>Обработка имен классов</b></a><a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/24767"><span class="fa fa-bicycle"></span>&nbsp;6 дней назад:&nbsp;Код принят на ревью для <b>Различия jsx и html</b></a></div></li></ul>
-<ul class="navbar-nav">
-<li class="nav-item ml-0">
-<div class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="https://ru.hexlet.io/ratings#" title="Баллов: 2584">
-<span class="badge badge-primary mr-2" title="Полный доступ">
-PRO
-</span>
-<span class="fa fa-user-circle-o d-lg-inline-block d-xl-none"></span>
-<div class="d-lg-none d-xl-inline-block">
-g_grigori
-</div>
-<div class="d-lg-none d-xl-inline-block">
-(2584)
-</div>
-</a>
-<span class="sr-only"><span class="translation_missing" title="translation missing: ru.layouts.header.toggle_dropdown">Toggle Dropdown</span></span>
-<div class="dropdown-menu dropdown-menu-right">
-<a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/u/g_grigori">Мой профиль
-</a><a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/account/referral">Мои бонусы
-<span class="fa fa-heart text-danger ml-1"></span>
-</a><a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/account/profile/edit">Настройки
-</a><div class="dropdown-divider"></div>
-<a class="dropdown-item" rel="nofollow" data-method="delete" href="https://ru.hexlet.io/session">Выйти</a>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-light hexlet-navbar">
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive"
+      data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarResponsive">
+      <a aria-hidden="true" class="navbar-brand mr-4" href="https://ru.hexlet.io/">
+        Hexlet
+      </a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link  " href="https://ru.hexlet.io/my">
+            <span class="fa fa-map-marker hexlet-header-icon"></span>
+            Мой Хекслет
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " href="https://ru.hexlet.io/professions">
+            <span class="fa fa-university hexlet-header-icon"></span>
+            Обучение
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ru.hexlet.io/projects">
+            <span class="fa fa-code-fork hexlet-header-icon"></span>
+            Проекты
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://ru.hexlet.io/mentors">
+            <span class="fa fa-users hexlet-header-icon"></span>
+            Менторы
+          </a>
+        </li>
+        <li class="nav-item">
+          <a target="_blank" class="nav-link" href="https://hexletguides.github.io/">
+            <span class="fa fa-book hexlet-header-icon"></span>
+            Hexlet Guides
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" id="notifications">
+        <li data-reactroot="" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="https://ru.hexlet.io/ratings#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="fa fa-bell-o"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25274">
+              <span class="fa fa-bicycle"></span>&nbsp;около 21 часа назад:&nbsp;Код принят на ревью для
+              <b>События</b>
+            </a>
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25252">
+              <span class="fa fa-bicycle"></span>&nbsp;около 24 часов назад:&nbsp;Код принят на ревью для
+              <b>JQuery</b>
+            </a>
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25095">
+              <span class="fa fa-bicycle"></span>&nbsp;2 дня назад:&nbsp;Код принят на ревью для
+              <b>Объекты первого класса</b>
+            </a>
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25034">
+              <span class="fa fa-bicycle"></span>&nbsp;3 дня назад:&nbsp;Код принят на ревью для
+              <b>Children</b>
+            </a>
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/25023">
+              <span class="fa fa-bicycle"></span>&nbsp;3 дня назад:&nbsp;Код принят на ревью для
+              <b>Обработка имен классов</b>
+            </a>
+            <a class="dropdown-item" href="https://ru.hexlet.io/code_reviews/24767">
+              <span class="fa fa-bicycle"></span>&nbsp;6 дней назад:&nbsp;Код принят на ревью для
+              <b>Различия jsx и html</b>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item ml-0">
+          <div class="dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="https://ru.hexlet.io/ratings#"
+              title="Баллов: 2584">
+              <span class="badge badge-primary mr-2" title="Полный доступ">
+                PRO
+              </span>
+              <span class="fa fa-user-circle-o d-lg-inline-block d-xl-none"></span>
+              <div class="d-lg-none d-xl-inline-block">
+                g_grigori
+              </div>
+              <div class="d-lg-none d-xl-inline-block">
+                (2584)
+              </div>
+            </a>
+            <span class="sr-only">
+              <span class="translation_missing" title="translation missing: ru.layouts.header.toggle_dropdown">Toggle Dropdown</span>
+            </span>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/u/g_grigori">Мой профиль
+              </a>
+              <a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/account/referral">Мои бонусы
+                <span class="fa fa-heart text-danger ml-1"></span>
+              </a>
+              <a title="grgrvl14@gmail.com" class="dropdown-item ml-0" href="https://ru.hexlet.io/account/profile/edit">Настройки
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" rel="nofollow" data-method="delete" href="https://ru.hexlet.io/session">Выйти</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="container py-2">
+  <div class="container py-2">
 
-<div class="row">
-<div class="col-12">
-<h1 class="display-4 my-4">Рейтинг пользователей</h1>
-<table class="table table-striped">
-<thead>
-<tr>
-<th>Позиция</th>
-<th>Пользователь</th>
-<th>Количество очков</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>
-<a href="https://ru.hexlet.io/u/rdb">Dmitriy Bataev</a>
-</td>
-<td>3907</td>
-</tr>
-<tr>
-<td>2</td>
-<td>
-<a href="https://ru.hexlet.io/u/dstarcev">Дмитрий Старцев</a>
-</td>
-<td>3889</td>
-</tr>
-<tr>
-<td>3</td>
-<td>
-<a href="https://ru.hexlet.io/u/slavamokerov">Slava Mokerov</a>
-</td>
-<td>3439</td>
-</tr>
-<tr>
-<td>4</td>
-<td>
-<a href="https://ru.hexlet.io/u/buran">Антон Буренков</a>
-</td>
-<td>3409</td>
-</tr>
-<tr>
-<td>5</td>
-<td>
-<a href="https://ru.hexlet.io/u/vishkir">Кирилл Вишенков</a>
-</td>
-<td>3343</td>
-</tr>
-<tr>
-<td>6</td>
-<td>
-<a href="https://ru.hexlet.io/u/titov_andrei">Andrew E. Titov H&amp;K</a>
-</td>
-<td>3228</td>
-</tr>
-<tr>
-<td>7</td>
-<td>
-<a href="https://ru.hexlet.io/u/slazzy">Артем Целовальников</a>
-</td>
-<td>3179</td>
-</tr>
-<tr>
-<td>8</td>
-<td>
-<a href="https://ru.hexlet.io/u/count">Kirill Grafov</a>
-</td>
-<td>3078</td>
-</tr>
-<tr>
-<td>9</td>
-<td>
-<a href="https://ru.hexlet.io/u/lazycoder">Улугбек Туйчиев</a>
-</td>
-<td>3051</td>
-</tr>
-<tr>
-<td>10</td>
-<td>
-<a href="https://ru.hexlet.io/u/peresvet">Никита Соловьёв</a>
-</td>
-<td>2967</td>
-</tr>
-<tr>
-<td>11</td>
-<td>
-<a href="https://ru.hexlet.io/u/begimov">Galymzhan Begimov</a>
-</td>
-<td>2910</td>
-</tr>
-<tr>
-<td>12</td>
-<td>
-<a href="https://ru.hexlet.io/u/rende11">Николай Артамонов</a>
-</td>
-<td>2872</td>
-</tr>
-<tr>
-<td>13</td>
-<td>
-<a href="https://ru.hexlet.io/u/just_another_andy">Andy (user-d889cbcbc0874c45)</a>
-</td>
-<td>2858</td>
-</tr>
-<tr>
-<td>14</td>
-<td>
-<a href="https://ru.hexlet.io/u/freiserg">freiserg</a>
-</td>
-<td>2772</td>
-</tr>
-<tr>
-<td>15</td>
-<td>
-<a href="https://ru.hexlet.io/u/nalanpa">Алан Носенкис</a>
-</td>
-<td>2745</td>
-</tr>
-<tr>
-<td>16</td>
-<td>
-<a href="https://ru.hexlet.io/u/stalkalex">Александр Абоимов</a>
-</td>
-<td>2744</td>
-</tr>
-<tr>
-<td>17</td>
-<td>
-<a href="https://ru.hexlet.io/u/clamps">clamps</a>
-</td>
-<td>2707</td>
-</tr>
-<tr>
-<td>18</td>
-<td>
-<a href="https://ru.hexlet.io/u/petrovich">Петров Кирилл</a>
-</td>
-<td>2660</td>
-</tr>
-<tr>
-<td>19</td>
-<td>
-<a href="https://ru.hexlet.io/u/george-a">Георгий Ачкасов</a>
-</td>
-<td>2651</td>
-</tr>
-<tr>
-<td>20</td>
-<td>
-<a href="https://ru.hexlet.io/u/maximtop">Maxim Topciu</a>
-</td>
-<td>2641</td>
-</tr>
-<tr>
-<td>21</td>
-<td>
-<a href="https://ru.hexlet.io/u/sashashakun">Александр Шакун</a>
-</td>
-<td>2626</td>
-</tr>
-<tr>
-<td>22</td>
-<td>
-<a href="https://ru.hexlet.io/u/krivtsov">Sergey Krivtsov</a>
-</td>
-<td>2618</td>
-</tr>
-<tr>
-<td>23</td>
-<td>
-<a href="https://ru.hexlet.io/u/g_grigori">Григорий Грудинин</a>
-</td>
-<td>2584</td>
-</tr>
-<tr>
-<td>24</td>
-<td>
-<a href="https://ru.hexlet.io/u/eem">Евгений Михайлов</a>
-</td>
-<td>2564</td>
-</tr>
-<tr>
-<td>25</td>
-<td>
-<a href="https://ru.hexlet.io/u/smetdenis">Denis Smetannikov (aka SmetDenis)</a>
-</td>
-<td>2469</td>
-</tr>
-<tr>
-<td>26</td>
-<td>
-<a href="https://ru.hexlet.io/u/ilyarn">Ilya Rn</a>
-</td>
-<td>2467</td>
-</tr>
-<tr>
-<td>27</td>
-<td>
-<a href="https://ru.hexlet.io/u/rodjer200586">Алексей Синдюков</a>
-</td>
-<td>2458</td>
-</tr>
-<tr>
-<td>28</td>
-<td>
-<a href="https://ru.hexlet.io/u/pavel223">Павел А</a>
-</td>
-<td>2447</td>
-</tr>
-<tr>
-<td>29</td>
-<td>
-<a href="https://ru.hexlet.io/u/fessv">Сергей Фесенко</a>
-</td>
-<td>2433</td>
-</tr>
-<tr>
-<td>30</td>
-<td>
-<a href="https://ru.hexlet.io/u/kerbrek">Вадим kerbrek</a>
-</td>
-<td>2433</td>
-</tr>
-<tr>
-<td>31</td>
-<td>
-<a href="https://ru.hexlet.io/u/sora">Тимур Маликин</a>
-</td>
-<td>2397</td>
-</tr>
-<tr>
-<td>32</td>
-<td>
-<a href="https://ru.hexlet.io/u/marcheneli">Николай Марченко</a>
-</td>
-<td>2396</td>
-</tr>
-<tr>
-<td>33</td>
-<td>
-<a href="https://ru.hexlet.io/u/kisonic">Денис Ефремов</a>
-</td>
-<td>2390</td>
-</tr>
-<tr>
-<td>34</td>
-<td>
-<a href="https://ru.hexlet.io/u/nazyrovrh">Renat</a>
-</td>
-<td>2372</td>
-</tr>
-<tr>
-<td>35</td>
-<td>
-<a href="https://ru.hexlet.io/u/irastypain">Иван Растяпин</a>
-</td>
-<td>2357</td>
-</tr>
-<tr>
-<td>36</td>
-<td>
-<a href="https://ru.hexlet.io/u/koktut">Максим Собин</a>
-</td>
-<td>2344</td>
-</tr>
-<tr>
-<td>37</td>
-<td>
-<a href="https://ru.hexlet.io/u/andrejs82">Андрей Соколов</a>
-</td>
-<td>2329</td>
-</tr>
-<tr>
-<td>38</td>
-<td>
-<a href="https://ru.hexlet.io/u/uslashka">Алсу Старцева</a>
-</td>
-<td>2283</td>
-</tr>
-<tr>
-<td>39</td>
-<td>
-<a href="https://ru.hexlet.io/u/alshad">Alexey Shobanov</a>
-</td>
-<td>2261</td>
-</tr>
-<tr>
-<td>40</td>
-<td>
-<a href="https://ru.hexlet.io/u/vitaliy_ti">Виталий Ти</a>
-</td>
-<td>2257</td>
-</tr>
-<tr>
-<td>41</td>
-<td>
-<a href="https://ru.hexlet.io/u/yarymvsarge">Олег Ярымов</a>
-</td>
-<td>2247</td>
-</tr>
-<tr>
-<td>42</td>
-<td>
-<a href="https://ru.hexlet.io/u/komissarovea">Eugene Komissarov</a>
-</td>
-<td>2231</td>
-</tr>
-<tr>
-<td>43</td>
-<td>
-<a href="https://ru.hexlet.io/u/vladv">Vladimir Veselov</a>
-</td>
-<td>2201</td>
-</tr>
-<tr>
-<td>44</td>
-<td>
-<a href="https://ru.hexlet.io/u/iskaldvind">Ярослав Ветер</a>
-</td>
-<td>2194</td>
-</tr>
-<tr>
-<td>45</td>
-<td>
-<a href="https://ru.hexlet.io/u/nbvehbq">Тимур Карпенок</a>
-</td>
-<td>2186</td>
-</tr>
-<tr>
-<td>46</td>
-<td>
-<a href="https://ru.hexlet.io/u/dzencot">Ivan Gagarinov</a>
-</td>
-<td>2180</td>
-</tr>
-<tr>
-<td>47</td>
-<td>
-<a href="https://ru.hexlet.io/u/aplatonov">Anton Platonov</a>
-</td>
-<td>2171</td>
-</tr>
-<tr>
-<td>48</td>
-<td>
-<a href="https://ru.hexlet.io/u/leshiple">Александр Епихин</a>
-</td>
-<td>2168</td>
-</tr>
-<tr>
-<td>49</td>
-<td>
-<a href="https://ru.hexlet.io/u/alek_web">Александр О.</a>
-</td>
-<td>2158</td>
-</tr>
-<tr>
-<td>50</td>
-<td>
-<a href="https://ru.hexlet.io/u/maxprosper">Максим  Проскурня</a>
-</td>
-<td>2152</td>
-</tr>
-<tr>
-<td>51</td>
-<td>
-<a href="https://ru.hexlet.io/u/krigar1184">Nikita Antonenkov</a>
-</td>
-<td>2119</td>
-</tr>
-<tr>
-<td>52</td>
-<td>
-<a href="https://ru.hexlet.io/u/dajnz">Vladimir Ponomarev</a>
-</td>
-<td>2115</td>
-</tr>
-<tr>
-<td>53</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-785b1d5f05f38855">Сергей Маркелов</a>
-</td>
-<td>2088</td>
-</tr>
-<tr>
-<td>54</td>
-<td>
-<a href="https://ru.hexlet.io/u/damirn">Damir N</a>
-</td>
-<td>2087</td>
-</tr>
-<tr>
-<td>55</td>
-<td>
-<a href="https://ru.hexlet.io/u/shad">Aleksandr Shepeliev</a>
-</td>
-<td>2086</td>
-</tr>
-<tr>
-<td>56</td>
-<td>
-<a href="https://ru.hexlet.io/u/cr1stal">Sergey Voronin</a>
-</td>
-<td>2080</td>
-</tr>
-<tr>
-<td>57</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-c42805d778d2aacc">Егор Кададинский</a>
-</td>
-<td>2079</td>
-</tr>
-<tr>
-<td>58</td>
-<td>
-<a href="https://ru.hexlet.io/u/graywrk">Сергей Дмитриев</a>
-</td>
-<td>2067</td>
-</tr>
-<tr>
-<td>59</td>
-<td>
-<a href="https://ru.hexlet.io/u/phlx">Stanislav Varnavsky</a>
-</td>
-<td>2062</td>
-</tr>
-<tr>
-<td>60</td>
-<td>
-<a href="https://ru.hexlet.io/u/v_kolesnikov">Василий Колесников</a>
-</td>
-<td>2059</td>
-</tr>
-<tr>
-<td>61</td>
-<td>
-<a href="https://ru.hexlet.io/u/vladbuk">Vladislav Bukhanets</a>
-</td>
-<td>2048</td>
-</tr>
-<tr>
-<td>62</td>
-<td>
-<a href="https://ru.hexlet.io/u/valsy">Валерий Симонов</a>
-</td>
-<td>2036</td>
-</tr>
-<tr>
-<td>63</td>
-<td>
-<a href="https://ru.hexlet.io/u/borisk">Борис Кошелев</a>
-</td>
-<td>2019</td>
-</tr>
-<tr>
-<td>64</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-f8d51cc4bd3bfba5">Илья Барышников</a>
-</td>
-<td>2008</td>
-</tr>
-<tr>
-<td>65</td>
-<td>
-<a href="https://ru.hexlet.io/u/mrixs">Владимир Загайнов</a>
-</td>
-<td>1982</td>
-</tr>
-<tr>
-<td>66</td>
-<td>
-<a href="https://ru.hexlet.io/u/yarem4uk">Alexandr Yaremchuk</a>
-</td>
-<td>1972</td>
-</tr>
-<tr>
-<td>67</td>
-<td>
-<a href="https://ru.hexlet.io/u/marganezz">Николай Земелько</a>
-</td>
-<td>1967</td>
-</tr>
-<tr>
-<td>68</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-c379d7b9a8036381">Ivan Zhulitov</a>
-</td>
-<td>1958</td>
-</tr>
-<tr>
-<td>69</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-c5974bdac4b5b9d8">Сергей Щелоков</a>
-</td>
-<td>1940</td>
-</tr>
-<tr>
-<td>70</td>
-<td>
-<a href="https://ru.hexlet.io/u/awwert">awwert</a>
-</td>
-<td>1936</td>
-</tr>
-<tr>
-<td>71</td>
-<td>
-<a href="https://ru.hexlet.io/u/fedor">fedor</a>
-</td>
-<td>1928</td>
-</tr>
-<tr>
-<td>72</td>
-<td>
-<a href="https://ru.hexlet.io/u/alexpts">Александр Павлов</a>
-</td>
-<td>1927</td>
-</tr>
-<tr>
-<td>73</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-3def829eeb318a67">user-3def829eeb318a67</a>
-</td>
-<td>1924</td>
-</tr>
-<tr>
-<td>74</td>
-<td>
-<a href="https://ru.hexlet.io/u/antonazgarovich">Антон Масаллимов</a>
-</td>
-<td>1908</td>
-</tr>
-<tr>
-<td>75</td>
-<td>
-<a href="https://ru.hexlet.io/u/evz">Евгений Земченков</a>
-</td>
-<td>1901</td>
-</tr>
-<tr>
-<td>76</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-873867d7df70eb1a">Эдуард Мульганов</a>
-</td>
-<td>1896</td>
-</tr>
-<tr>
-<td>77</td>
-<td>
-<a href="https://ru.hexlet.io/u/asturia">Александр Кравченко</a>
-</td>
-<td>1894</td>
-</tr>
-<tr>
-<td>78</td>
-<td>
-<a href="https://ru.hexlet.io/u/gluck">Kirill Kikimov</a>
-</td>
-<td>1870</td>
-</tr>
-<tr>
-<td>79</td>
-<td>
-<a href="https://ru.hexlet.io/u/davinci">Алексиндр Б.</a>
-</td>
-<td>1861</td>
-</tr>
-<tr>
-<td>80</td>
-<td>
-<a href="https://ru.hexlet.io/u/jeka_r">Евгений Радзивончик</a>
-</td>
-<td>1858</td>
-</tr>
-<tr>
-<td>81</td>
-<td>
-<a href="https://ru.hexlet.io/u/kanri">kanri</a>
-</td>
-<td>1841</td>
-</tr>
-<tr>
-<td>82</td>
-<td>
-<a href="https://ru.hexlet.io/u/nexmean">Alexander Makarov</a>
-</td>
-<td>1836</td>
-</tr>
-<tr>
-<td>83</td>
-<td>
-<a href="https://ru.hexlet.io/u/user100">Pavel Perminov</a>
-</td>
-<td>1831</td>
-</tr>
-<tr>
-<td>84</td>
-<td>
-<a href="https://ru.hexlet.io/u/we-st0r">Алексей Кудрявцев</a>
-</td>
-<td>1830</td>
-</tr>
-<tr>
-<td>85</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-3ddf662c6a2b2d17">Илья Васильев</a>
-</td>
-<td>1830</td>
-</tr>
-<tr>
-<td>86</td>
-<td>
-<a href="https://ru.hexlet.io/u/endurance">Александр Савин</a>
-</td>
-<td>1821</td>
-</tr>
-<tr>
-<td>87</td>
-<td>
-<a href="https://ru.hexlet.io/u/younke">Vasily Ptitsyn</a>
-</td>
-<td>1815</td>
-</tr>
-<tr>
-<td>88</td>
-<td>
-<a href="https://ru.hexlet.io/u/lite">Александр Сизиков</a>
-</td>
-<td>1813</td>
-</tr>
-<tr>
-<td>89</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-0d1ac8be9e84d568">Pavel Timofev</a>
-</td>
-<td>1812</td>
-</tr>
-<tr>
-<td>90</td>
-<td>
-<a href="https://ru.hexlet.io/u/antonshwab">Anton Shwab</a>
-</td>
-<td>1811</td>
-</tr>
-<tr>
-<td>91</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-30cce969c108bf1a">Илья Токарев</a>
-</td>
-<td>1809</td>
-</tr>
-<tr>
-<td>92</td>
-<td>
-<a href="https://ru.hexlet.io/u/andreyandreev">Andrey Andreev</a>
-</td>
-<td>1802</td>
-</tr>
-<tr>
-<td>93</td>
-<td>
-<a href="https://ru.hexlet.io/u/irina_fadeeva">Ирина Фадеева</a>
-</td>
-<td>1797</td>
-</tr>
-<tr>
-<td>94</td>
-<td>
-<a href="https://ru.hexlet.io/u/deman">DGrachov</a>
-</td>
-<td>1788</td>
-</tr>
-<tr>
-<td>95</td>
-<td>
-<a href="https://ru.hexlet.io/u/fox">Александр Башенин</a>
-</td>
-<td>1783</td>
-</tr>
-<tr>
-<td>96</td>
-<td>
-<a href="https://ru.hexlet.io/u/amlagoda">Александр Лагода</a>
-</td>
-<td>1772</td>
-</tr>
-<tr>
-<td>97</td>
-<td>
-<a href="https://ru.hexlet.io/u/user-349083db010be0ce">Виктор Пепе</a>
-</td>
-<td>1772</td>
-</tr>
-<tr>
-<td>98</td>
-<td>
-<a href="https://ru.hexlet.io/u/mastnova">Denis Matveev</a>
-</td>
-<td>1770</td>
-</tr>
-<tr>
-<td>99</td>
-<td>
-<a href="https://ru.hexlet.io/u/crags">Сергей Кравченко</a>
-</td>
-<td>1770</td>
-</tr>
-<tr>
-<td>100</td>
-<td>
-<a href="https://ru.hexlet.io/u/mattspr">Egor Lebedev</a>
-</td>
-<td>1768</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="display-4 my-4">Рейтинг пользователей</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Позиция</th>
+              <th>Пользователь</th>
+              <th>Количество очков</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/rdb">Dmitriy Bataev</a>
+              </td>
+              <td>3907</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/dstarcev">Дмитрий Старцев</a>
+              </td>
+              <td>3889</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/slavamokerov">Slava Mokerov</a>
+              </td>
+              <td>3439</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/buran">Антон Буренков</a>
+              </td>
+              <td>3409</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/vishkir">Кирилл Вишенков</a>
+              </td>
+              <td>3343</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/titov_andrei">Andrew E. Titov H&amp;K</a>
+              </td>
+              <td>3228</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/slazzy">Артем Целовальников</a>
+              </td>
+              <td>3179</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/count">Kirill Grafov</a>
+              </td>
+              <td>3078</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/lazycoder">Улугбек Туйчиев</a>
+              </td>
+              <td>3051</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>
+                <a href="https://ru.hexlet.io/u/peresvet">Никита Соловьёв</a>
+              </td>
+              <td>2967</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-</div>
-<footer class="footer hexlet-footer py-5 mt-5 text-muted">
-<div class="container">
-<div class="row mt-1">
-<div class="col-lg-4 col-sm-12 col-12">
-<div class="h2 hexlet-light-title">
-Hexlet
-<i class="hexlet-font-weight-lighter">βeta,</i>
-2017
-</div>
-<a href="mailto:support@hexlet.io">support@hexlet.io</a>
-/
-<a href="http://help.hexlet.io/">Помощь</a>
-<div class="pr-2">
-<hr>
-</div>
-<p>
-</p><ul class="nav flex-column">
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/about">О проекте</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/testimonials">Отзывы пользователей</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/feedback">Идеи и предложения</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/tos">Условия использования</a></li>
-</ul>
-<p></p>
-<p class="mt-2" itemscope="" itemtype="http://schema.org/Organization">
-<span itemprop="legalName">Hexlet Ltd.</span>
-<br>
-<span itemprop="address">Puolikkotie 8, 02230 Espoo, Finland</span>
-<br>
-<span itemprop="vatID">VAT ID:&nbsp;FI26641607</span>
-</p>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="h4 mb-3">На связи</div>
-<ul class="nav flex-column">
-<li class="nav-item font-weight-bold">
-<span class="fa fa-newspaper-o mr-2"></span>
-<a href="https://ru.hexlet.io/blog">Блог</a>
-</li>
-<li class="nav-item mt-2">
-<span class="fa fa-video-camera mr-2"></span>
-<a target="_blank" href="https://www.youtube.com/user/HexletUniversity"> youtube</a>
-</li>
-<li class="nav-item">
-<span class="fa fa-telegram mr-2"></span>
-<a href="https://t.me/hexlet_ru"> telegram</a>
-</li>
-<li class="nav-item">
-<span class="fa fa-twitter mr-2"></span>
-<a target="_blank" href="http://twitter.com/HexletHQ"> twitter</a>
-</li>
-<li class="nav-item">
-<span class="fa fa-facebook mr-2"></span>
-<a target="_blank" href="https://www.facebook.com/Hexlet"> facebook</a>
-</li>
-<li class="nav-item">
-<span class="fa fa-vk mr-2"></span>
-<a id="VK95731912" target="_blank" href="https://vk.com/hexlet"> vkontakte</a>
-</li>
-<li class="nav-item">
-<span class="fa fa-google-plus mr-2"></span>
-<a target="_blank" href="https://plus.google.com/b/108226937214888198279/+HexletOrg/posts"> google+</a>
-</li>
-<li class="nav-item mt-3"><a target="_blank" href="http://slack-ru.hexlet.io/">Чат</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/community">Сообщество</a></li>
-</ul>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="h4 mb-3">Дополнительно</div>
-<ul class="nav flex-column">
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/coach">Наставник для новичков</a></li>
-<li class="nav-item"><a href="https://hexletguides.github.io/">Hexlet Guides</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/principles">Принципы программирования</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/pages/recommended-books">Рекомендуемые книги</a></li>
-<li class="nav-item"><a target="_blank" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSr58Xg4DVX2WdmAkv3hE2ITJ3fPeNUmRFe0Ekro53U-ACFrhcUkV8PlUm4ddcn53Uh-5UIezZtZZgc/pubhtml">Матрица компетентности</a></li>
-</ul>
-</div>
-<div class="col-lg-2 col-sm-6 col-12">
-<div class="h4 mb-3">&nbsp;</div>
-<ul class="nav flex-column">
-<li class="mb-1 nav-item">
-<a class="font-weight-bold" href="https://ru.hexlet.io/gift">Подарок другу</a>
-<span class="fa fa-gift"></span>
-</li>
-<li class="nav-item"><a href="https://ru.hexlet.io/my/blog_posts">Мои посты в блог</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/jobs">Вакансии</a></li>
-<li class="nav-item mt-3"><a href="https://ru.hexlet.io/teams">Для компаний</a></li>
-<li class="nav-item"><a href="https://ru.hexlet.io/business">Моя команда</a></li>
-<li class="nav-item mt-3"><a href="https://ru.hexlet.io/content_teams/default/courses">Учительская</a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<script src="./test-rate_files/polyfill.min.js"></script>
-<script src="./test-rate_files/essential-7a2f9cd5b7e7a4c571550f13c70ba2082f8779fbbf78e23ae9f0f3112ea6cd67.js"></script>
-<script src="./test-rate_files/application-c2867295c63ed2f83608c1b24065a795df2d6bdaa7de01889b41d5d3a85fbbe4.js"></script><meta name="yandex-verification" content="fbe6f65db8108225">
-<script type="text/javascript" id="">(function(d,b,a){(b[a]=b[a]||[]).push(function(){try{b.yaCounter45038036=new Ya.Metrika({id:45038036,clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})}catch(f){}});var e=d.getElementsByTagName("script")[0],c=d.createElement("script");a=function(){e.parentNode.insertBefore(c,e)};c.type="text/javascript";c.async=!0;c.src="https://mc.yandex.ru/metrika/watch.js";"[object Opera]"==b.opera?d.addEventListener("DOMContentLoaded",a,!1):a()})(document,window,"yandex_metrika_callbacks");</script>
-<noscript>&lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/45038036" style="position:absolute; left:-9999px;" alt=""&gt;&lt;/div&gt;</noscript>
-<script type="text/javascript" id="">gon.current_user.isGuest||(wootricSettings={language:gon.locale.toUpperCase(),email:gon.current_user.email,external_id:gon.current_user.id,created_at:Math.floor(Date.parse(gon.current_user.created_at)/1E3),account_token:"NPS-24585fb4"});</script>
-<script type="text/javascript" id="" src="./test-rate_files/beacon.js"></script>
-<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1901967613399172");fbq("track","PageView");</script>
-<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1901967613399172&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
-
-
-<script>
-  !function(e,o,n){window.HSCW=o,window.HS=n,n.beacon=n.beacon||{};var t=n.beacon;t.userConfig={},t.readyQueue=[],t.config=function(e){this.userConfig=e},t.ready=function(e){this.readyQueue.push(e)},o.config={docs:{enabled:!0,baseUrl:"//hexlet.helpscoutdocs.com/"},contact:{enabled:!0,formId:"4d3729f5-96ac-11e6-91aa-0a5fecc78a4d"}};var r=e.getElementsByTagName("script")[0],c=e.createElement("script");c.type="text/javascript",c.async=!0,c.src="https://djtflbt20bdde.cloudfront.net/",r.parentNode.insertBefore(c,r)}(document,window.HSCW||{},window.HS||{});
-</script>
-<script>
-  HS.beacon.config({
-    poweredBy: false,
-    icon: 'question',
-    topArticles: true,
-    translation: {
-      searchLabel: 'Чем можем помочь?',
-      searchErrorLabel: 'Запрос занял слишком много времени. Пожалуйста, проверьте свое соединение с интернетом и попробуйте заново.',
-      noResultsLabel: 'Ничего не найдено по запросу',
-      contactLabel: 'Написать в поддержку',
-      attachFileLabel: 'Приложить файл',
-      attachFileError: 'Максимальный размер файла 10мб',
-      nameLabel: 'Ваше имя',
-      nameError: 'Пожалуйста, введите ваше имя',
-      emailLabel: 'Email',
-      emailError: 'Пожалуйста, введите правильный email',
-      topicLabel: 'Выберите тему',
-      topicError: 'Пожалуйста, выберите тему из списка',
-      subjectLabel: 'Заголовок',
-      subjectError: 'Пожалуйста, введите заголовок',
-      messageLabel: 'Чем можем помочь?',
-      messageError: 'Пожалуйста, введите сообщение',
-      sendLabel: 'Отправить',
-      contactSuccessLabel: 'Сообщение отправлено!',
-      contactSuccessDescription: 'Спасибо! Сотрудник Хекслета ответит вам в ближайшее время.'
-    }
-  });
-</script>
-<script>
-  if (!gon.current_user.isGuest) {
-    HS.beacon.ready(function() {
-      HS.beacon.identify({
-        name: gon.current_user.public_name,
-        email: gon.current_user.email,
-        CreatedAt: gon.current_user.created_at,
-        CanUsePaidFeatures: gon.current_user.can_use_paid_features
+  </div>
+  <footer class="footer hexlet-footer py-5 mt-5 text-muted">
+    <div class="container">
+      <div class="row mt-1">
+        <div class="col-lg-4 col-sm-12 col-12">
+          <div class="h2 hexlet-light-title">
+            Hexlet
+            <i class="hexlet-font-weight-lighter">βeta,</i>
+            2017
+          </div>
+          <a href="mailto:support@hexlet.io">support@hexlet.io</a>
+          /
+          <a href="http://help.hexlet.io/">Помощь</a>
+          <div class="pr-2">
+            <hr>
+          </div>
+          <p>
+          </p>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/about">О проекте</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/testimonials">Отзывы пользователей</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/feedback">Идеи и предложения</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+            </li>
+          </ul>
+          <p></p>
+          <p class="mt-2" itemscope="" itemtype="http://schema.org/Organization">
+            <span itemprop="legalName">Hexlet Ltd.</span>
+            <br>
+            <span itemprop="address">Puolikkotie 8, 02230 Espoo, Finland</span>
+            <br>
+            <span itemprop="vatID">VAT ID:&nbsp;FI26641607</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="h4 mb-3">На связи</div>
+          <ul class="nav flex-column">
+            <li class="nav-item font-weight-bold">
+              <span class="fa fa-newspaper-o mr-2"></span>
+              <a href="https://ru.hexlet.io/blog">Блог</a>
+            </li>
+            <li class="nav-item mt-2">
+              <span class="fa fa-video-camera mr-2"></span>
+              <a target="_blank" href="https://www.youtube.com/user/HexletUniversity"> youtube</a>
+            </li>
+            <li class="nav-item">
+              <span class="fa fa-telegram mr-2"></span>
+              <a href="https://t.me/hexlet_ru"> telegram</a>
+            </li>
+            <li class="nav-item">
+              <span class="fa fa-twitter mr-2"></span>
+              <a target="_blank" href="http://twitter.com/HexletHQ"> twitter</a>
+            </li>
+            <li class="nav-item">
+              <span class="fa fa-facebook mr-2"></span>
+              <a target="_blank" href="https://www.facebook.com/Hexlet"> facebook</a>
+            </li>
+            <li class="nav-item">
+              <span class="fa fa-vk mr-2"></span>
+              <a id="VK95731912" target="_blank" href="https://vk.com/hexlet"> vkontakte</a>
+            </li>
+            <li class="nav-item">
+              <span class="fa fa-google-plus mr-2"></span>
+              <a target="_blank" href="https://plus.google.com/b/108226937214888198279/+HexletOrg/posts"> google+</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a target="_blank" href="http://slack-ru.hexlet.io/">Чат</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/community">Сообщество</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="h4 mb-3">Дополнительно</div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/coach">Наставник для новичков</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://hexletguides.github.io/">Hexlet Guides</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/principles">Принципы программирования</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/pages/recommended-books">Рекомендуемые книги</a>
+            </li>
+            <li class="nav-item">
+              <a target="_blank" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSr58Xg4DVX2WdmAkv3hE2ITJ3fPeNUmRFe0Ekro53U-ACFrhcUkV8PlUm4ddcn53Uh-5UIezZtZZgc/pubhtml">Матрица компетентности</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-sm-6 col-12">
+          <div class="h4 mb-3">&nbsp;</div>
+          <ul class="nav flex-column">
+            <li class="mb-1 nav-item">
+              <a class="font-weight-bold" href="https://ru.hexlet.io/gift">Подарок другу</a>
+              <span class="fa fa-gift"></span>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/my/blog_posts">Мои посты в блог</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/jobs">Вакансии</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a href="https://ru.hexlet.io/teams">Для компаний</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://ru.hexlet.io/business">Моя команда</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a href="https://ru.hexlet.io/content_teams/default/courses">Учительская</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./test-rate_files/polyfill.min.js"></script>
+  <script src="./test-rate_files/essential-7a2f9cd5b7e7a4c571550f13c70ba2082f8779fbbf78e23ae9f0f3112ea6cd67.js"></script>
+  <script src="./test-rate_files/application-c2867295c63ed2f83608c1b24065a795df2d6bdaa7de01889b41d5d3a85fbbe4.js"></script>
+  <meta name="yandex-verification" content="fbe6f65db8108225">
+  <script type="text/javascript" id="">
+    (function (d, b, a) {
+      (b[a] = b[a] || []).push(function () {
+        try {
+          b.yaCounter45038036 = new Ya.Metrika({
+            id: 45038036,
+            clickmap: !0,
+            trackLinks: !0,
+            accurateTrackBounce: !0,
+            webvisor: !0
+          })
+        } catch (f) {}
       });
+      var e = d.getElementsByTagName("script")[0],
+        c = d.createElement("script");
+      a = function () {
+        e.parentNode.insertBefore(c, e)
+      };
+      c.type = "text/javascript";
+      c.async = !0;
+      c.src = "https://mc.yandex.ru/metrika/watch.js";
+      "[object Opera]" == b.opera ? d.addEventListener("DOMContentLoaded", a, !1) : a()
+    })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>&lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/45038036" style="position:absolute; left:-9999px;" alt=""&gt;&lt;/div&gt;</noscript>
+  <script type="text/javascript" id="">
+    gon.current_user.isGuest || (wootricSettings = {
+      language: gon.locale.toUpperCase(),
+      email: gon.current_user.email,
+      external_id: gon.current_user.id,
+      created_at: Math.floor(Date.parse(gon.current_user.created_at) / 1E3),
+      account_token: "NPS-24585fb4"
     });
-  }
-</script>
+  </script>
+  <script type="text/javascript" id="" src="./test-rate_files/beacon.js"></script>
+  <script type="text/javascript" id="">
+    ! function (b, e, f, g, a, c, d) {
+      b.fbq || (a = b.fbq = function () {
+          a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+        }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f),
+        c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "1901967613399172");
+    fbq("track", "PageView");
+  </script>
+  <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1901967613399172&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
 
-<script src="./test-rate_files/manifest-47c92ebfa1d17994c409.js"></script>
-<script src="./test-rate_files/vendor-231e830d5f2c760b732c.js"></script>
-<script src="./test-rate_files/notifications-0f674bcb55b79cd3f514.js" async="async"></script>
+
+  <script>
+    ! function (e, o, n) {
+      window.HSCW = o, window.HS = n, n.beacon = n.beacon || {};
+      var t = n.beacon;
+      t.userConfig = {}, t.readyQueue = [], t.config = function (e) {
+        this.userConfig = e
+      }, t.ready = function (e) {
+        this.readyQueue.push(e)
+      }, o.config = {
+        docs: {
+          enabled: !0,
+          baseUrl: "//hexlet.helpscoutdocs.com/"
+        },
+        contact: {
+          enabled: !0,
+          formId: "4d3729f5-96ac-11e6-91aa-0a5fecc78a4d"
+        }
+      };
+      var r = e.getElementsByTagName("script")[0],
+        c = e.createElement("script");
+      c.type = "text/javascript", c.async = !0, c.src = "https://djtflbt20bdde.cloudfront.net/", r.parentNode.insertBefore(
+        c, r)
+    }(document, window.HSCW || {}, window.HS || {});
+  </script>
+  <script>
+    HS.beacon.config({
+      poweredBy: false,
+      icon: 'question',
+      topArticles: true,
+      translation: {
+        searchLabel: 'Чем можем помочь?',
+        searchErrorLabel: 'Запрос занял слишком много времени. Пожалуйста, проверьте свое соединение с интернетом и попробуйте заново.',
+        noResultsLabel: 'Ничего не найдено по запросу',
+        contactLabel: 'Написать в поддержку',
+        attachFileLabel: 'Приложить файл',
+        attachFileError: 'Максимальный размер файла 10мб',
+        nameLabel: 'Ваше имя',
+        nameError: 'Пожалуйста, введите ваше имя',
+        emailLabel: 'Email',
+        emailError: 'Пожалуйста, введите правильный email',
+        topicLabel: 'Выберите тему',
+        topicError: 'Пожалуйста, выберите тему из списка',
+        subjectLabel: 'Заголовок',
+        subjectError: 'Пожалуйста, введите заголовок',
+        messageLabel: 'Чем можем помочь?',
+        messageError: 'Пожалуйста, введите сообщение',
+        sendLabel: 'Отправить',
+        contactSuccessLabel: 'Сообщение отправлено!',
+        contactSuccessDescription: 'Спасибо! Сотрудник Хекслета ответит вам в ближайшее время.'
+      }
+    });
+  </script>
+  <script>
+    if (!gon.current_user.isGuest) {
+      HS.beacon.ready(function () {
+        HS.beacon.identify({
+          name: gon.current_user.public_name,
+          email: gon.current_user.email,
+          CreatedAt: gon.current_user.created_at,
+          CanUsePaidFeatures: gon.current_user.can_use_paid_features
+        });
+      });
+    }
+  </script>
+
+  <script src="./test-rate_files/manifest-47c92ebfa1d17994c409.js"></script>
+  <script src="./test-rate_files/vendor-231e830d5f2c760b732c.js"></script>
+  <script src="./test-rate_files/notifications-0f674bcb55b79cd3f514.js" async="async"></script>
 
 
 
 
 
 
-<script type="text/javascript" id="">window.wootric("run");</script>
-<div id="hs-beacon"><div data-reactroot=""><iframe style="background: transparent; border: none; bottom: 12px; height: 80px; position: fixed; right: 18px; top: auto; width: 80px; z-index: 1050;" src="./test-rate_files/saved_resource.html"></iframe><iframe style="border: none; bottom: 89px; height: 0px; position: fixed; right: 15px; top: auto; width: 450px; z-index: 1050;" src="./test-rate_files/saved_resource(1).html"></iframe></div></div></body></html>
+  <script type="text/javascript" id="">
+    window.wootric("run");
+  </script>
+  <div id="hs-beacon">
+    <div data-reactroot="">
+      <iframe style="background: transparent; border: none; bottom: 12px; height: 80px; position: fixed; right: 18px; top: auto; width: 80px; z-index: 1050;"
+        src="./test-rate_files/saved_resource.html"></iframe>
+      <iframe style="border: none; bottom: 89px; height: 0px; position: fixed; right: 15px; top: auto; width: 450px; z-index: 1050;"
+        src="./test-rate_files/saved_resource(1).html"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -3,7 +3,6 @@ import 'babel-polyfill';
 import bodyParser from 'koa-bodyparser';
 import middleware from 'koa-webpack';
 import Koa from 'koa';
-import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import Router from 'koa-router';
@@ -11,9 +10,12 @@ import Pug from 'koa-pug';
 import methodOverride from 'koa-methodoverride';
 import koaLogger from 'koa-logger';
 import _ from 'lodash';
+import schedule from 'node-schedule';
 
 import getWebpackConfig from '../webpack.config.babel';
-import HTMLparser from './parser';
+import getRoutes from './controllers';
+import container from './container';
+import hexletRequest from './lib/hexlet-request';
 
 dotenv.config();
 
@@ -52,14 +54,13 @@ export default () => {
   });
 
   pug.use(app);
-  router.get('root', '/', async (ctx) => {
-    const pathToHTML = path.resolve(__dirname, '..', '__tests__', '__fixtures__', 'test-rate.html');
-    const data = fs.readFileSync(pathToHTML, 'utf8').toString();
-    const users = HTMLparser(data);
-    await ctx.render('index', { users });
-  });
 
   app.use(router.routes()).use(router.allowedMethods());
+  schedule.scheduleJob('10 * * * * *', async () => {
+    await hexletRequest('https://ru.hexlet.io/ratings', container, new Date());
+  });
+
+  getRoutes(router, container);
 
   return app;
 };

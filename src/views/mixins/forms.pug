@@ -1,0 +1,12 @@
+mixin searchSelect(labelName, queryName, options)
+  .form-group
+    label(class='mr-sm-2')= labelName
+    select(name=queryName class='form-control mb-2 mr-sm-2 mb-sm-0')
+      if options
+        option(selected='selected')= 'none'
+        for option in options 
+          option= option
+
+mixin button(f, value = 'Save', type = 'submit')
+  .form-group
+    input(class='btn' type=`${type}` value=`${value}`)

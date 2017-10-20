@@ -1,19 +1,29 @@
+include ./mixins/forms.pug
 doctype html
 html(lang="en")
+  .container.mb-5
+    form.form-inline(action=urlFor('root')).justify-content-center
+      +searchSelect('Date', 'date', date)
+      +button(f, 'Filter')
+
   head
     title= Title
     script(src='/assets/vendor.js')
     script(src='/assets/application.js')
   body
-    table.table.table-striped
-      thead
-        tr
-          th Позиция
-          th Пользователь
-          th Рейтинг
-      tbody
-        for user in users
+    if users.length > 0
+      table.table.table-striped
+        thead
           tr
-            td= user.rate
-            td= user.name
-            td= user.points
+            th Позиция
+            th Пользователь
+            th Рейтинг
+        tbody
+          for user in users
+            tr
+              td= `${user.prev[0].rate}()`
+              td= user.name
+              td= `${user.prev[0].points}()`
+    else
+      .alert.alert-info(role='alert')
+        | There is no any data...
