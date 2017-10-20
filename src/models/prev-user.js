@@ -11,7 +11,7 @@ export default connect => connect.define('prev', {
     type: Sequelize.INTEGER,
   },
   date: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
   },
   isCurrent: {
     type: Sequelize.BOOLEAN,

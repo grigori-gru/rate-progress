@@ -53,8 +53,8 @@ describe('nock requests', async () => {
   const expectedData = fs.readFileSync(expected, 'utf8');
   const expectedData2 = fs.readFileSync(expected2, 'utf8');
 
-  const date = new Date();
-  const query = querystring.stringify({ date: date.toString() });
+  const date = new Date().toString();
+  const query = querystring.stringify({ date });
   console.log(date);
 
   beforeAll(async () => {
@@ -78,7 +78,7 @@ describe('nock requests', async () => {
   });
 
   it('test load second time', async () => {
-    await hexletRequest('http://ru.hexlet.io/ratingsafter/', container, new Date());
+    await hexletRequest('http://ru.hexlet.io/ratingsafter/', container, new Date().toString());
     const res = await request(server).get(`/?${query}`);
     expect(parser(res.text)).toEqual(parser(expectedData2));
   });

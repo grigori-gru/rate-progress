@@ -21,9 +21,9 @@ html(lang="en")
         tbody
           for user in users
             tr
-              td= `${user.prev[0].rate}()`
+              td= `${user.rate}(${user.prevRate || ''})`
               td= user.name
-              td= `${user.prev[0].points}()`
+              td= `${user.points}(${user.prevPoints || ''})`
     else
       .alert.alert-info(role='alert')
         | There is no any data...

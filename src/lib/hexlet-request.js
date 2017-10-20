@@ -12,17 +12,13 @@ export default async (url, { User, PrevUser }, date) => {
     logger('users', users);
 
     await Promise.all(users.map(async ({ points, rate, name }) => {
-      const user = await User.findOne({
-        name,
-        include: [{
-          model: PrevUser,
-          as: 'prev',
-          where: {
-            isCurrent: true,
-          },
-        }],
+      const prevUser = await PrevUser.findOne({
+        where: {
+          name,
+          isCurrent: true,
+        },
       });
-      logger('findOne user', user);
+      // logger('findOne user', prevUser);
       const form = {
         name,
         rate,
@@ -32,20 +28,13 @@ export default async (url, { User, PrevUser }, date) => {
       };
 
       try {
-        if (user) {
-          logger('update user', user.userId);
-          await user.update({
-            prev: {
-              isCurrent: false,
-            },
-          }, {
-            include: [{
-              model: PrevUser,
-              as: 'prev',
-            }],
-          }).then(res => logger('update', res.prev));
-          await user.addPrev(form);
-          logger('User', await PrevUser.findAll());
+        if (prevUser) {
+          logger('update user', prevUser.userId);
+          await prevUser.update({
+            isCurrent: false,
+          });
+          await PrevUser.create({ ...form, userId: prevUser.userId });
+          // logger('User', await PrevUser.findAll());
         } else {
           logger('no user');
           await User.create({
@@ -59,7 +48,7 @@ export default async (url, { User, PrevUser }, date) => {
               model: PrevUser,
               as: 'prev',
             }],
-          });
+          }).then(res => logger(`${res.name} created`));
         }
       } catch (e) {
         logger('error in db creating', e);
