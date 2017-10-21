@@ -55,7 +55,6 @@ describe('nock requests', async () => {
 
   const date = new Date().toString();
   const query = querystring.stringify({ date });
-  console.log(date);
 
   beforeAll(async () => {
     jasmine.addMatchers(matchers);

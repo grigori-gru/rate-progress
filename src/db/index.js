@@ -14,6 +14,5 @@ switch (process.env.NODE_ENV) {
   default:
     dbUrl = process.env.DATABASE_URL_DEV;
 }
-console.log(dbUrl);
 
 export default new Sequelize(dbUrl, { operatorsAliases: false });
