@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-export default connect => connect.define('prevs', {
+export default connect => connect.define('prev', {
   name: {
     type: Sequelize.STRING,
   },
