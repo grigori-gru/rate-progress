@@ -14,12 +14,12 @@ export default (router, { User, PrevUser }) => {
           model: PrevUser,
           as: 'prev',
           where: {
-            [Op.or]: [{ isCurrent: true }, { date: new Date(query.date).toString() }],
+            [Op.or]: [{ is_current: true }, { date: new Date(query.date).toString() }],
           },
         }],
       }).map(({ name, prev }) => {
         const newPrev = prev.reduce((acc, value) => {
-          if (value.isCurrent) {
+          if (value.is_current) {
             return { ...acc, rate: value.rate, points: value.points };
           }
           return { ...acc, prevRate: value.rate, prevPoints: value.points };

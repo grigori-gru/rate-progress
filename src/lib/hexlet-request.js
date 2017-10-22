@@ -15,7 +15,7 @@ export default async (url, { User, PrevUser }, date) => {
       const prevUser = await PrevUser.findOne({
         where: {
           name,
-          isCurrent: true,
+          is_current: true,
         },
       });
       // logger('findOne user', prevUser);
@@ -23,7 +23,7 @@ export default async (url, { User, PrevUser }, date) => {
         name,
         rate,
         points,
-        isCurrent: true,
+        is_current: true,
         date,
       };
 
@@ -31,7 +31,7 @@ export default async (url, { User, PrevUser }, date) => {
         if (prevUser) {
           logger('update user', prevUser.userId);
           await prevUser.update({
-            isCurrent: false,
+            is_current: false,
           });
           await PrevUser.create({ ...form, userId: prevUser.userId });
           // logger('User', await PrevUser.findAll());
