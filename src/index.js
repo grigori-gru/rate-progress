@@ -55,7 +55,7 @@ export default () => {
   pug.use(app);
 
   app.use(router.routes()).use(router.allowedMethods());
-  schedule.scheduleJob('30 * * * * *', async () => {
+  schedule.scheduleJob('* 0,6,12,18 * * *', async () => {
     await hexletRequest('https://ru.hexlet.io/ratings', new Date().toString());
   });
 
