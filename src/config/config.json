@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_sqlite",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "operatorsAliases": "false"
+  },
+  "test": {
+    "url": "sqlite://__tests__/__fixtures__/testdatabase.sqlite",
+    "dialect": "sqlite",
+    "operatorsAliases": "false"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "operatorsAliases": "false"
+  }
+}
+
+

@@ -8,14 +8,14 @@ import querystring from 'querystring';
 import app from '../src';
 import parser from '../src/lib/parser';
 import hexletRequest from '../src/lib/hexlet-request';
-import init from '../src/init';
-import container from '../src/container';
+import models from '../src/models';
 
 describe('requests', async () => {
   let server;
   beforeAll(async () => {
+    await models.User.sync({ force: true });
+    await models.PrevUser.sync({ force: true });
     jasmine.addMatchers(matchers);
-    await init(true);
   });
 
   beforeEach(() => {
@@ -58,7 +58,8 @@ describe('nock requests', async () => {
 
   beforeAll(async () => {
     jasmine.addMatchers(matchers);
-    await init(true);
+    await models.User.sync({ force: true });
+    await models.PrevUser.sync({ force: true });
   });
 
   beforeEach(() => {
@@ -70,14 +71,12 @@ describe('nock requests', async () => {
       .reply(200, dataAfter);
   });
 
-  it('test first load', async () => {
-    await hexletRequest('http://ru.hexlet.io/ratingsbefore/', container, date);
-    const res = await request(server).get('/');
-    expect(parser(res.text)).toEqual(parser(expectedData));
-  });
-
   it('test load second time', async () => {
-    await hexletRequest('http://ru.hexlet.io/ratingsafter/', container, new Date().toString());
+    await hexletRequest('http://ru.hexlet.io/ratingsbefore/', date);
+    const res1 = await request(server).get('/');
+    expect(parser(res1.text)).toEqual(parser(expectedData));
+
+    await hexletRequest('http://ru.hexlet.io/ratingsafter/', new Date().toString());
     const res = await request(server).get(`/?${query}`);
     expect(parser(res.text)).toEqual(parser(expectedData2));
   });

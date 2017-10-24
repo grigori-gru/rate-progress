@@ -15,4 +15,4 @@ testwatch:
 			npm run testwatch
 
 db:
-			npm run babel-node -- src/db/db.js
+			npm run babel-node -- src/db/db.js			

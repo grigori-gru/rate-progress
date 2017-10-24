@@ -1,10 +1,11 @@
 import debug from 'debug';
 import axios from './axios';
 import HTMLparser from './parser';
+import models from '../models';
 
 const logger = debug('hexlet-request');
 
-export default async (url, { User, PrevUser }, date) => {
+export default async (url, date) => {
   try {
     const { data } = await axios.get(url, { responseType: 'text' });
     // logger('axios data', res.data);
@@ -12,13 +13,13 @@ export default async (url, { User, PrevUser }, date) => {
     logger('users', users);
 
     await Promise.all(users.map(async ({ points, rate, name }) => {
-      const prevUser = await PrevUser.findOne({
+      const prevUser = await models.PrevUser.findOne({
         where: {
           name,
           is_current: true,
         },
       });
-      // logger('findOne user', prevUser);
+      logger('findOne user', prevUser);
       const form = {
         name,
         rate,
@@ -33,20 +34,20 @@ export default async (url, { User, PrevUser }, date) => {
           await prevUser.update({
             is_current: false,
           });
-          await PrevUser.create({ ...form, userId: prevUser.userId });
+          await models.PrevUser.create({ ...form, userId: prevUser.userId });
           // logger('User', await PrevUser.findAll());
         } else {
           logger('no user');
-          await User.create({
+          await models.User.create({
             name,
-            prev: [{
+            prevUser: [{
               ...form,
               name,
             }],
           }, {
             include: [{
-              model: PrevUser,
-              as: 'prev',
+              model: models.PrevUser,
+              as: 'prevUser',
             }],
           }).then(res => logger(`${res.name} created`));
         }

@@ -14,7 +14,6 @@ import schedule from 'node-schedule';
 
 import getWebpackConfig from '../webpack.config.babel';
 import getRoutes from './controllers';
-import container from './container';
 import hexletRequest from './lib/hexlet-request';
 
 dotenv.config();
@@ -56,11 +55,11 @@ export default () => {
   pug.use(app);
 
   app.use(router.routes()).use(router.allowedMethods());
-  schedule.scheduleJob('* 0,6,12,18 * * *', async () => {
-    await hexletRequest('https://ru.hexlet.io/ratings', container, new Date().toString());
+  schedule.scheduleJob('30 * * * * *', async () => {
+    await hexletRequest('https://ru.hexlet.io/ratings', new Date().toString());
   });
 
-  getRoutes(router, container);
+  getRoutes(router);
 
   return app;
 };

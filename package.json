@@ -15,6 +15,7 @@
     "postinstall": "npm run build",
     "start": "gulp server",
     "eslint": "eslint",
+    "sequelize": "sequelize",
     "test": "jest",
     "testwatch": "jest --watch"
   },
@@ -60,10 +61,12 @@
     "lodash": "*",
     "nock": "*",
     "node-schedule": "*",
-    "pg": "^7.3.0",
+    "pg": "^6.2.4",
+    "pg-hstore": "^2.3.2",
     "postcss-loader": "*",
     "rollbar": "*",
     "sequelize": "*",
+    "sequelize-cli": "^3.0.0",
     "sequelize-mock": "*",
     "sqlite3": "^3.1.13",
     "style-loader": "*",
@@ -76,6 +79,7 @@
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
     "jest-supertest-matchers": "*",
+    "json-loader": "^0.5.7",
     "nodemon": "*",
     "supertest": "*"
   }
