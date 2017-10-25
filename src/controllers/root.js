@@ -1,6 +1,7 @@
 import debug from 'debug';
 import Sequelize from 'sequelize';
 import models from '../models';
+import difBuilder from '../lib/dif-builder';
 
 const logger = debug('root');
 const { Op } = Sequelize;
@@ -32,8 +33,7 @@ export default (router) => {
 
         const allDate = await models.PrevUser.findAll({ attributes: ['date'] }).map(item => item.date.toString());
         const date = [...new Set(allDate)];
-        users.sort((a, b) => a.rate - b.rate);
-        await ctx.render('index', { users, date });
+        await ctx.render('index', { users: difBuilder(users), date });
       } catch (e) {
         logger('error', e);
       }
