@@ -8,3 +8,4 @@ npm-debug.log
 .DS_Store
 database.sqlite
 127.0.0.1
+dist
