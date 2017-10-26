@@ -11,12 +11,15 @@ import methodOverride from 'koa-methodoverride';
 import koaLogger from 'koa-logger';
 import _ from 'lodash';
 import schedule from 'node-schedule';
+import Rollbar from 'rollbar';
 
 import getWebpackConfig from '../webpack.config.babel';
 import getRoutes from './controllers';
 import hexletRequest from './lib/hexlet-request';
 
 dotenv.config();
+const rollbarAccessToken = process.env.POST_SERVER_ITEM_ACCESS_TOKEN;
+const rollbar = new Rollbar(rollbarAccessToken);
 
 export default () => {
   const app = new Koa();
@@ -55,11 +58,15 @@ export default () => {
   pug.use(app);
 
   app.use(router.routes()).use(router.allowedMethods());
-  schedule.scheduleJob('0 */4 * * *', async () => {
+  schedule.scheduleJob('1 13 * * *', async () => {
     await hexletRequest('https://ru.hexlet.io/ratings', new Date().toString());
+    rollbar.log('Get data');
   });
 
   getRoutes(router);
+
+  app.use(rollbar.errorHandler(rollbarAccessToken));
+
 
   return app;
 };
