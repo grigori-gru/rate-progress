@@ -14,5 +14,8 @@ test:
 testwatch:
 			npm run testwatch
 
-db:
-			npm run babel-node -- src/db/db.js			
+migrate:
+			sequelize db:migrate
+
+drop:
+			sequelize db:drop

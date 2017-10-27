@@ -58,10 +58,10 @@ export default () => {
   pug.use(app);
 
   app.use(router.routes()).use(router.allowedMethods());
-  schedule.scheduleJob('1 13 * * *', async () => {
-    await hexletRequest('https://ru.hexlet.io/ratings', new Date().toString());
-    rollbar.log('Get data');
-  });
+  // schedule.scheduleJob('*/5 * * * *', async () => {
+  //   await hexletRequest('https://ru.hexlet.io/ratings', new Date().toString());
+  //   rollbar.log('Get data');
+  // });
 
   getRoutes(router);
 

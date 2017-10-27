@@ -5,6 +5,7 @@ import gulp from 'gulp';
 
 // import init from './src/init';
 import startServer from './src';
+import hexletRequest from './src/lib/hexlet-request';
 
 // gulp.task('console', () => {
 //   gutil.log = gutil.noop;
@@ -21,3 +22,6 @@ import startServer from './src';
 
 gulp.task('server', () =>
   startServer().listen(process.env.PORT || 3000));
+
+gulp.task('request', () =>
+  hexletRequest('https://ru.hexlet.io/ratings', new Date().toString()));
