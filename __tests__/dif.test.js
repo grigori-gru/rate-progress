@@ -19,11 +19,21 @@ const data = [
 ];
 
 const expected = [
-  { name: 'a', rateDif: '1(2)', pointsDif: '10(+2)' },
-  { name: 'b', rateDif: '2(1)', pointsDif: '9(0)' },
-  { name: 'c', rateDif: '3(3)', pointsDif: '8(+2)' },
-  { name: 'd', rateDif: '4(4)', pointsDif: '7(+3)' },
-  { name: 'e', rateDif: '5', pointsDif: '6' },
+  {
+    name: 'a', rateDif: '1(2)', pointsDif: '10(+2)', status: 'success',
+  },
+  {
+    name: 'b', rateDif: '2(1)', pointsDif: '9(0)', status: 'danger',
+  },
+  {
+    name: 'c', rateDif: '3(3)', pointsDif: '8(+2)', status: null,
+  },
+  {
+    name: 'd', rateDif: '4(4)', pointsDif: '7(+3)', status: null,
+  },
+  {
+    name: 'e', rateDif: '5', pointsDif: '6', status: 'success',
+  },
 ];
 
 test('get dif', () => {
